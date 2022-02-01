@@ -179,7 +179,7 @@ The only feature considered was the first names from the sunshine list due to pl
 Initial testing was done using NLTK library Male and Female name list  
 A labelled class list is created using the following code:
 
-![labels](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/Images/labels.png)
+![labels](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/ML%20images/labels.png)
 
 The above list is randomly shuffled and the resulting list is divided into a training and testing set. Note default percentage breakdown between training and testing has been used. 
 
@@ -187,7 +187,7 @@ From there, we instantiate a naive Bayes classification model (classifier) and t
 
 Lastly, a basic accuracy score is generated for evaluating the model.
 
-![Accuracy_InitialModel](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/Images/Accuracy_InitialModel.png)
+![Accuracy_InitialModel](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/ML%20images/Accuracy_InitialModel.png)
 
 #### Improved Testing and Training:
 
@@ -197,7 +197,7 @@ Lastly, a basic accuracy score is generated for evaluating the model.
 - Some other train:test size ratios were tried that were <0.2 but were not selected due to their high accuracy results likely being due to overfitting
 
 A hybrid model is then created which improved the accuracy.
-![hybrid_accuracy](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/Images/hybrid_accuracy.PNG)
+![hybrid_accuracy](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/ML%20images/hybrid_accuracy.PNG)
 
 ###  Model Choice
 Our model has used two types of machine learning: Relative frequency classifier and Natural Language Toolkit (NLTK), a Python library that used supervised classification to determine a gender class (output) for each input (given name).   This resulted in a hybrid model.
