@@ -51,7 +51,7 @@ Given the data available, can we use 25 years of data to determine whether the O
 
 ## **Data Pipeline:**
 
-![flow_chart](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/Images/Revised_ArchitectureDiagram.png)
+![flow_chart](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Revised_ArchitectureDiagram.png)
 
 ##  Pipeline Assembly Instructions
 
@@ -122,24 +122,24 @@ CSV files from various sources were used create our database. Sources and links 
 
 | Data | Data Sources |raw data CSV |
 |----|----|----|
-| Kaggle consoidated 1996-2019 |https://www.kaggle.com/sahidvelji/the-ontario-sunshine-list|  [Sunshine 1996-2019 raw data](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/Raw%20Data%20CSV%20files/SunShine.csv) |
-| Ontario Sunshine List 2020 |https://www.ontario.ca/page/public-sector-salary-disclosure|  [Sunshine List 2020 raw data](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/Raw%20Data%20CSV%20files/Sunshine-2020-en-utf-8-2022-01-10.csv) |
+| Kaggle consoidated 1996-2019 |https://www.kaggle.com/sahidvelji/the-ontario-sunshine-list|  [Sunshine 1996-2019 raw data](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Raw%20Data%20CSV%20files/SunShine.csv) |
+| Ontario Sunshine List 2020 |https://www.ontario.ca/page/public-sector-salary-disclosure|  [Sunshine List 2020 raw data](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Raw%20Data%20CSV%20files/Sunshine-2020-en-utf-8-2022-01-10.csv) |
 
  
 ##### **Ontario Wages - Stats Canada**
 
 | Data | Data Sources |Raw Data CSV |
 |----|----|----|
-| Statistics Canada Male 25-54 |https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410034001|  [Stats Can Male 25-54](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/Raw%20Data%20CSV%20files/StatsCan_Male_25to54.csv) |
-| Statistics Canada Male 55 or older |https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410034001|  [Stats Can Male 55 or older](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/Raw%20Data%20CSV%20files/StatsCan_Male_55Older.csv) |
-| Statistics Canada Female 25-54 |https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410034001|  [Stats Can Female 25-54](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/Raw%20Data%20CSV%20files/StatsCan_Wage_Female_25to54.csv)|
-| Statistics Canada Female 55 or older |https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410034001|  [Stats Can Female 55 or older](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/Raw%20Data%20CSV%20files/StatsCan_Wage_Female_55Older.csv)|
+| Statistics Canada Male 25-54 |https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410034001|  [Stats Can Male 25-54](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Raw%20Data%20CSV%20files/StatsCan_Male_25to54.csv) |
+| Statistics Canada Male 55 or older |https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410034001|  [Stats Can Male 55 or older](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Raw%20Data%20CSV%20files/StatsCan_Male_55Older.csv) |
+| Statistics Canada Female 25-54 |https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410034001|  [Stats Can Female 25-54](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Raw%20Data%20CSV%20files/StatsCan_Wage_Female_25to54.csv)|
+| Statistics Canada Female 55 or older |https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410034001|  [Stats Can Female 55 or older](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Raw%20Data%20CSV%20files/StatsCan_Wage_Female_55Older.csv)|
 
  
 ##### **CPI - Stats Canada**
 | Data | Data Sources |Raw Data CSV |
 |----|----|----|
-| Statistics Canada Inflation |https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810025601|  [Stats Can CPI](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/Raw%20Data%20CSV%20files/OntarioCPI_databaseLoadingData.csv) |
+| Statistics Canada Inflation |https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810025601|  [Stats Can CPI](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Raw%20Data%20CSV%20files/OntarioCPI_databaseLoadingData.csv) |
 
 
 #### 2) Transfrom
@@ -155,7 +155,7 @@ For our database, we will be using both PostgreSQL, which will be hosted on AWS.
 ###### PostgreSQL Database
 The image below represents the tables of data that are uploaded onto the database in Postgres. The entity relational diagram allowed for easier joining of tables with SQL and was a helpful reference while importing data into the database.
 
-![ERD](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/Images/Revised_ERD_v3.png)
+![ERD](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Revised_ERD_v3.png)
 
 
 ## **Machine Learning: Gender Identification**
