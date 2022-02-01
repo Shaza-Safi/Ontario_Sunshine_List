@@ -245,7 +245,14 @@ Data analysis is being done by all team members separately to uncover trends and
 
 
 ## **Analysis Results:**
-To be presented in future segments.
+
+preliminary notes
+### Gender Gap:
+- the number of women employed has now equalized with men in 2020....from 30ish% in 1996 to 50% in 2020
+- wages are still show gap
+
+### $ Spent
+
 
 
 ## **Recommendations for Future Analysis/ Parking Lot items due to time and resource constraints:**
@@ -255,8 +262,13 @@ To be presented in future segments.
 
 ## **Issues Encountered:**
 - GitHub size constrainsts 
-- Sunshine dataset very messy and requires more cleansing on job title and employer names.  No unique employee number is contained in the dataset, so it is difficult to distinguish unique individuals from year to year on the sunshine list
 - We chose to only use relationships between the Statistics Canada and Sunshine datasets, as unions would have cause record duplications, limiting us on how we could display some of the data
+- Sunshine dataset very messy and requires exhaustive cleansing:
+      - on job titles require more standardization
+      - employer names require more standardization/clean up
+      - only records were employer name or title contain a city could be identified. Assumptions were made for large employer such as Hydro, OPP and headquarter locations used
+      - no unique employee number is contained in the dataset, so it is difficult to distinguish unique individuals from year to year on the sunshine list
+
 
 # Thank You 
 
