@@ -152,8 +152,6 @@ The Sunshhine list is an annualizd publication of all Ontario public employees w
 ##### **Database:**
 For our database, we will be using both PostgreSQL, which will be hosted on AWS. This enables anyone with the access codes to work the project data. 
 
-NOTE: for the purpose of segment 2 submission, the tableau dashboard will be linked to CSV files to create the data model.  The database will be migrated to AWS in segment 3.
-
 ###### PostgreSQL Database
 The image below represents the tables of data that are uploaded onto the database in Postgres. The entity relational diagram allowed for easier joining of tables with SQL and was a helpful reference while importing data into the database.
 
@@ -165,13 +163,19 @@ The image below represents the tables of data that are uploaded onto the databas
 Machine learning tools will be used to predict gender for the list of names in the sunshine list. This process is essential for the analysis and outputs/recommendations.
 
 ### Preliminary Data Processing:
-Initial classification using Natural Language Toolkit (NLTK), a Python library that used supervised classification, is done to determine a gender class (output) for each input (given name).
-
-For this segment we have used a library installed that will automatically import two text files, ‘male.txt’ and ‘female.txt’ which contain a large list of male and female names respectively. 
-
+The following steps were used in the preliminary data processing stage:
+- Downloaded US Social Security name-gender-frequency data onto local machine (1 file per year from 1880-2020)
+- Loop through each file in Jupyter Notebook to read each file into PD Data Frame using OS
+- Use functools library function ‘reduce’ and pass it a lambda function that appends each individual DF into one large DF
+- A groupby method was performed on the large DFs ‘first_name’ and ‘gender’ columns and the frequencies were summed, resulting in only the unique name-gender instances remaining in the DF
+- Split the large DF into two separate DFs one for all of the multi-gender first names and one for all non multi-gender first names
+- Used pivot function on each DF to remove the ‘gender’ column and replace it with two new columns ‘F’ and ‘M’
+- Append these two DFs
+- Preliminary processing for the NLTK Naive Bayes Classifier involved using the same US Social Security data but a function was defined and used to slice the first names into only the last 3 letters of the first names which were then used
+- Last letter and last two letters were also tried but ultimately the last 3 letters of each first name were selected due to a resulting higher model accuracy
 
 ### Preliminary Feature Engineering/Selection and Decision-Making Process:
-
+The only feature considered was the first names from the sunshine list due to plausibility (relevance to predicting gender)
 
 ### Splitting Data Into Testing & Training sets:
 
@@ -191,16 +195,19 @@ Lastly, a basic accuracy score is generated for evaluating the model.
 
 #### Improved Testing and Training:
 
-Splitting US Social Security Name data into a training/testing set to test accuracy of model using just the training data (US Social Security Name Data) before passing Sunshine List unique first names data to model.
+- Splitting US Social Security Name data into a training/testing set to test accuracy of model using just the training data (US Social Security Name Data) before passing Sunshine List unique first names data to model.  
+- A testing size of 0.2 and 0.3 were tried using sklearn’s train test split method
+- 0.3 was selected as it resulted in a higher accuracy score
+- Some other train:test size ratios were tried that were <0.2 but were not selected due to their high accuracy results likely being due to overfitting
 
 A hybrid model is then created which improved the accuracy.
 ![hybrid_accuracy](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/Images/hybrid_accuracy.PNG)
 
 ###  Model Choice
-Our model has used two types of machine learning: Relative frequency classifier and Natural Language Toolkit (NLTK), a Python library that used supervised classification to determine a gender class (output) for each input (given name)
+Our model has used two types of machine learning: Relative frequency classifier and Natural Language Toolkit (NLTK), a Python library that used supervised classification to determine a gender class (output) for each input (given name).   This resulted in a hybrid model.
 
 #### Limitations
-- If first name is not on the US Social Security names dataframe the Relative frequency classifier cannot give a gender prediction. 
+The data is first passed through a relative name frequency-conditional probability model.  A function takes the name-gender-frequency data and performs simple conditional probability to output a gender prediction.  The model is limited.  If the model cannot find the name in its dataset (US Social Security name data), no prediction output will be given for said name.  For this reason, only names with no gender prediction are fed into the heuristic Naive Bayes Classification model.
 
 #### Benefits
 - The use of a hybrid model (Relative frequency classifier and Natural Language Toolkit (NLTK)) ensures that all first names have a gender prediction. 
