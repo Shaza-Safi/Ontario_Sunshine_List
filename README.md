@@ -210,11 +210,10 @@ Our model has used two types of machine learning: Relative frequency classifier 
 The data is first passed through a relative name frequency-conditional probability model.  A function takes the name-gender-frequency data and performs simple conditional probability to output a gender prediction.  The model is limited.  If the model cannot find the name in its dataset (US Social Security name data), no prediction output will be given for said name.  For this reason, only names with no gender prediction are fed into the heuristic Naive Bayes Classification model.
 
 #### Benefits
-- The use of a hybrid model (Relative frequency classifier and Natural Language Toolkit (NLTK)) ensures that all first names have a gender prediction. 
+The use of a hybrid model (Relative frequency classifier and Natural Language Toolkit (NLTK)) ensures that all first names have a gender prediction. 
 
 #### Model Change Explainations:
-- Initially only the NLTK was used to identify gender with accuracy level of 76.1% 
-- As an attemp to increase the accurancy of the model we introduced a secondary model Relative Frequency Classifier which increased the accuracy to 78.7% 
+Initially only the NLTK was used to identify gender with accuracy level of 76.1%.  As an attemp to increase the accurancy of the model we introduced a secondary model Relative Frequency Classifier which increased the accuracy to 78.7%. 
 
 ## **Dashboard:**
 We will use Tableau to create our Dashboard, which will be hosted on AWS. For the purpose of segment 2 submission, we will have our draft Dashboard data model built using CSV file exports from our SQL database.  Below is a preliminary blueprint of what the dashboard will look like.
