@@ -254,6 +254,11 @@ To be presented in future segments.
 - Conduct a sentimental analysis on twitter feeds using machine learning to identify relavence of the sunshine list and having a positive or negative impact.
 - Webscrapping to the sunshine list website in order to have the updated list every year.
 
+## **Issues Encountered:**
+- GitHub size constrainsts 
+- Sunshine dataset very messy and requires more cleansing on job title and employer names.  No unique employee number is contained in the dataset, so it is difficult to distinguish unique individuals from year to year on the sunshine list
+- We chose to only use relationships between the Statistics Canada and Sunshine datasets, as unions would have cause record duplications, limiting us on how we could display some of the data
+
 # Thank You 
 
 ## **References: Related Projects/Resources Used**
