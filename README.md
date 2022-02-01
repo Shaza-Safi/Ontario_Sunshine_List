@@ -16,10 +16,6 @@ University of Toronto Data Analytics Bootcamp Final Project
 
 NOTE: While members are assigned specific roles, we all work together on each part of the project.
 
-## Communication Protocol:
-
-<img width="600" alt="TeamCharter" src="https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/Images/TeamCharter_v1.PNG">
-
 ## **Selected Topic : Can it be used to evaluate fairness in the Ontario workforce?**
 
 ### Overview:
