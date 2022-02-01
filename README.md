@@ -2,7 +2,7 @@
 University of Toronto Data Analytics Bootcamp Final Project
 
 ## [Link to final project webpage](https://shaza-safi.github.io/Final-Project-Website/)
-![SunshineList1280x720___Gallery](https://user-images.githubusercontent.com/89538802/148806480-0441cc3f-635b-4d6e-95f3-7d15c40b278a.jpg)
+![SunshineList1280x720___Gallery](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/SunshineList1280x720___Gallery.jpg)
 
 
 ## This is the GitHub repository for our Boot Camp group's final project.
@@ -55,7 +55,7 @@ Given the data available, can we use 25 years of data to determine whether the O
 
 ##  Pipeline Assembly Instructions
 
-![pipeline](https://user-images.githubusercontent.com/88908758/151651947-762797e8-a307-44ad-8c89-71f59d6578e8.png)
+![pipeline](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/PipelineInstructions.PNG)
 
 ## 
 
@@ -64,18 +64,14 @@ Given the data available, can we use 25 years of data to determine whether the O
 | Objective|Location |
 |----|----|
 | Presentation | [Link to Google Slides](https://docs.google.com/presentation/d/12sRunD2lhAb3iMmoYrPP1e33THfheji_Kfs108casYw/edit?usp=sharing) |
-| Database Integration-step 1 | [Link to Sunshine SQL file](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/SunshineList.sql)|
-| Database Integration-step 2  | [Link to Stats Canada ipynb file](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/StatsCan_Ontario_cleansing.ipynb)|
-| Database Integration-step 3  | [Link to Sunshine ipynb file](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/SunshineList_DataCleansing.ipynb) |
-| Data Analysis | [Link to Data Analysis ipynb](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/Data_Analysis.ipynb) |
-| Machine Learning code and output | [Link to ML model](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/Machine_Learning_Model_Gender_Prediction.ipynb) |
+| Database Integration-step 1 | [Link to Sunshine SQL file](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/SunshineList.sql)|
+| Database Integration-step 2  | [Link to Stats Canada ipynb file](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/StatsCan_Ontario_cleansing.ipynb)|
+| Database Integration-step 3  | [Link to Sunshine ipynb file](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/SunshineList_DataCleansing.ipynb) |
+| Data Analysis | [Link to Data Analysis ipynb](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Data_Analysis.ipynb) |
+| Machine Learning code and output | [Link to ML model](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Machine_Learning_Model_Gender_Prediction.ipynb) |
 
-### Changes from Seg1 submission to Seg2 submission
-The following aspects of the original project scope have been placed in our parking lot due to insufficient resources for time allotted.
-- twitter sentiment analysis
-- age prediction based on first name
-- hosting has been switched from Heroku to AWS
-- initial intention was to scrape the Sunshine list from the Ontario government website to create a consolidated listing.  A kaggle dataset + an addition 2020 CSV file were used as an alternative due to time constrainsts.
+### Changes from Seg2 submission to Seg3 submission
+
       
 
 ## **Technologies & Tools Used:**
@@ -112,7 +108,7 @@ The following aspects of the original project scope have been placed in our park
 ## **Data Exploration Phase:**
 ### ETL Process 
 
-![screenshot](https://user-images.githubusercontent.com/89538802/149189544-4139a881-7988-4348-9137-2d6807f23403.png)
+![screenshot](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/ETL.PNG)
 
 
 #### 1) Extract
@@ -218,7 +214,7 @@ Initially only the NLTK was used to identify gender with accuracy level of 76.1%
 ## **Dashboard:**
 We will use Tableau to create our Dashboard, which will be hosted on AWS. For the purpose of segment 2 submission, we will have our draft Dashboard data model built using CSV file exports from our SQL database.  Below is a preliminary blueprint of what the dashboard will look like.
 
-![dashboard](https://user-images.githubusercontent.com/88908758/151651653-2a693df4-04d9-4787-b28e-d253c8bd6b8b.PNG)
+*insert updated snapshot of dashboard*
 
 [The link to our Preliminary tableau dashboard](https://public.tableau.com/views/Sunshine_Dashboard_Workbook/Gender_Dashboard?:language=en-US&:display_count=n&:origin=viz_share_link)
 
