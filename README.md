@@ -259,6 +259,7 @@ preliminary notes
 - Predict age for everyone on the sunshine list using machine learning techniques.
 - Conduct a sentimental analysis on twitter feeds using machine learning to identify relavence of the sunshine list and having a positive or negative impact.
 - Webscrapping to the sunshine list website in order to have the updated list every year.
+- consolidate the First Names, Gender tables into 1 and have the Machine Learning Model update the table, rather than reading one Names Table to create a secondary Names Table with gender, that is then used to update the Sunshine Table records.
 
 ## **Issues Encountered:**
 - GitHub size constrainsts 
