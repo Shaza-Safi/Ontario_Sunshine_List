@@ -259,8 +259,9 @@ preliminary notes
 
 ## **Issues Encountered:**
 - GitHub size constrainsts 
-- We chose to only use relationships between the Statistics Canada and Sunshine datasets, as unions would have cause record duplications, limiting us on how we could display some of the data
+- We chose to only use relationships between the Statistics Canada and Sunshine datasets, as unions and/or joins would have cause record duplications, limiting us on how we could display some of the data
 - Sunshine dataset very messy and requires exhaustive cleansing:
+
       - on job titles require more standardization
       - employer names require more standardization/clean up
       - only records were employer name or title contain a city could be identified. Assumptions were made for large employer such as Hydro, OPP and headquarter locations used
