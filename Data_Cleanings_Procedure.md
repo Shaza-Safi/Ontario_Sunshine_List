@@ -5,6 +5,8 @@
 ## **Statistics Canada CPI**
 The data from Statics Canada is clean. For the purpose of analysis, only the Product Group 'All-items' was kept.  All other groups were removed from the dataframe prior to import into the SQL table.
 
+The Consumer Price Index (CPI)  represents changes in prices as experienced by Canadian consumers. It measures price change by comparing, through time, the cost of a fixed basket of goods and services.
+
 What is the Canadian CPI [Refer to: An Overview of Canada's Consumer Price Index (CPI)](https://www150.statcan.gc.ca/eng/sc/video/cpi)
 
 <img width="800" alt="CPI" src="https://user-images.githubusercontent.com/89538802/151232562-968cbbde-1405-4053-bf81-d446a140fdb7.PNG">
@@ -53,17 +55,112 @@ Lastly, the NOC column was reviewed and all categories removed with the exceptio
 ## **Sunshine List**
 The Sunshhine list is an annualizd publication of all Ontario public employees with salaraies >= $100,000. This list is a amalgamation of several sectors over a multitude of employers. Given the 25 year span of data and inconsistent approach to data entry of fields being reported on, the consolidated Sunshine List for years 1996 to 2020 requires significant cleansing on various fields for the benefit of clean dashboard visualizations.  Below details steps taken for the purpose of analysis.
 
+*insert link to Sunshine_Data_cleasning.ipynb*
+
 
 ### Step 1 Consolidation of 1996 to 2020 dataset
 For the purpose of this project, as consolidated dataset (1996 to 2019) of the Sunshine found in kaggle.com was used as the foundation of our dataset. This dataset was further supplemented by adding the 2020 dataset extracted from Government of Ontario website.
 
-
-
 ![SunshineOrginal](https://user-images.githubusercontent.com/89538802/151239497-64d415a3-071a-42df-8994-a282cc511568.png)
 
 
-#### First Name
-When the ‘First Name’ column is reviewed for unique first names,  the same name with inconsistent data entry will be recognized as several unique names.  Below shows that in the top 5 names form the sunshine list both the names David and John are listed twice due to case sensitivity.
+Initial review of the dataset requires the following corrections:
+1) For the purpose of our analysis we chose to change the kaggle 'Salary Paid' and 'Taxable Benefits' columns from float to integer.
+2) Column comparisons between the kaggle and the 2020 annualized list show that the Salary and Benefits columns did have the same naming convention, nor share the same data types
+3) Correct 2020 'Salary' and 'Benefits' columns by removing the '$' and ',' 
+4) Correct 2020 'Salary' and 'Benefits' columns from a string to numeric
+5) Change 2020 'Salary' and 'Benefits' columns from a float to integer, in keeping with the kaggle dataset.
+
+The two datasets are then appended to create a consolidated 1996 to 2020 DataFrame called the 'sunshine_data_df'  This DataFrame consists of 1,676,561 records (rows) with 8 columns of data.
+
+A review for missing information in the sunshine_data_df revealled that there 3 null records.  These records pretained to the First Name column, which is crutial to our gender prediction model.  These rows must be removed from our DataFrame, resulting in 1,676,558 records with 8 columns.
+
+
+### Step 2  Adding of Additional Columns
+For the purpose of analysis and/or datacleansing of the 25 year Sunshine List, certain additional columns prove helpful.  The following columns are added to the the DataFrame.
+
+- **Total Compensation** ('Salary Paid' + 'Taxable Benefits')
+- **Clean Employer** (a duplicate of the Employer column to be used for cleansing/standardization of the employer name)
+- **Clean Job Title** (a duplicate of the Job Title column to be used for cleansing/standardization of the job title)
+- **Clean First Name** (a duplicate of the First Name column to be used for cleansing and identification of a First Name)
+- **Final First Name** (column to be used to determine the First Name for our Machine Learning Model)
+- **Gender** (assigned gender 'M' or 'F' to be predicted by the Machine Learning Model and populated in our SQL database via an update query)
+- **Age** (Placed in our parking lot.  This was part of our initial Machine Learning Model to predict an age based on a person's first name)
+- **City** (a column created in an effort to identify the 
+- **First Character Count** (a character count calculated based on the original First Name columns from the DataFrame. To be used as an assist in the data review and datacleansing processes)
+- **Word Count** (a word count calculated based on the original First Name columns from the DataFrame. To be used as an assist in the data review and datacleansing processes)
+- **Salary Bin** (a text field grouping salaries into a salary bin/lot size)
+
+### Step 3 Review of Individual Columns
+A closer look at the data highlights the following about the sunshine list:
+
+1) Data entry and collection is inconsistent across sectors, employers, names and can vary from year to year publications.
+2) Columns are each reviewed individually. Some are cleansed more than others, for example, greater care in cleansing and identifying a first name to be used in our machine learning model, than that of the last name.  Other columns focus on attempting to standardize sectors or employer names, so that aggregation of unique values can be displayed correctly.
+
+The following subsections will walk through the thought process on cleansing the individual columns.
+
+
+#### Sectors Column
+A value counts query shows that there are 81 unique sectors in the current DataFrame.  Cleansing actions performed are as follows by using the str.contains function to replace specific text with our standardized sector categories:
+
+1) For analysis purposes the seconded sectors will be consolidated and grouped under the 'Public Sector'.
+2) 'Other Public' grouped under 'Public Sector'
+3) All 'Government of Ontario' sectors grouped and rename to 'Government of Ontario'
+4) Universities and Colleges grouped and renamed to 'Post Secondary'
+5) Grade school, High school boards grouped and renamed to 'Schools'
+6) Any sectors with municipal have been grouped and renamed to ' Municipalities'
+7) Hydro One and Ontario Power Generation are now one entity, so all historical Hydro or OPG have been consolidated and renamed to 'Hydro/OPG'
+8) All crown agencies have been grouped and renamed under 'Crown Agencies'
+9) All Hospitals have been grouped and renamed under 'Hospitals'
+
+The result of the cleansing provides a reduction of sectors from 81 to  8 unique sector categories.
+
+*insert sector image*
+
+
+#### Last Name Column
+Minimal cleasning is done to the Last Name, as it will only be used for the purpose of concatenation to identify individuals.  Cleansing actions performed are as follows:
+
+1) Make all Last Names to lower case
+2) Make all Last Names to Capitalize the first letter of the Last Name
+
+
+#### Employer Column
+A value counts query shows that there are 8,666 unique sectors in the current DataFrame.  Cleansing actions performed are as follows by using the str.contains function to replace specific text with cleansed Employer Names:
+
+The result of the cleansing provides a reduction of employers from 8,666 to  7,966 unique employer names.
+
+*insert Big Brother image*
+
+#### City Column
+For the purpose of reviewing the Sunshine list and providing a visual on where in Ontario those positions making over $100,000 are situated, an attempt has been made to identify the city by using the Employer and Job Title information.  Cleansing actions performed are 100% manual and use the str.contains function to replace specific text with city names.
+
+1)  A copy of the original Employer column was used and the city name teased out.  This is a manual process of reviewing the data results and continuing to refine
+2) Employer Names without city information and having a high employee count where researched for headquarter locations. Examples of this would be hospitals, school boards and universities.
+3) Where no name could be identified using the Employer name, as review of the Job Title was used to tease out a potential city.    Examples of this can be found in certain hydro/OPG job titles where plant locations such as Pickering, Darlington, Bruce and Lambton could be identified
+4) a unique Ontario city list was created and used to cleanse the remaining records where no city could be identified. These records had the city data (old Employer data) removed and replaced with "Not Identified"
+
+The following is a link to the city.csv file used to cleanse in step 4.
+*insert link to city.csv*
+
+*insert additional SQL cleansing required on city and logic*
+
+
+#### Cleansed Job Title Column
+For the purpose of reviewing the Sunshine list to compare similiar jobs titles a cleansed job title column has been created to present standard titles.  Cleansing actions performed are 100% manual and use the str.contains function to replace specific text with job titles with standard titles.  A value counts query shows that there are 179,380 unique job titles in the current DataFrame.
+
+1)  A copy of the original Job Title column was used to group and standardize titles.  This is a manual process of reviewing the data results and continuing to refine
+
+The result of the cleansing provides a reduction of job titles from 179,380 to  5,097 unique job titles.
+
+
+#### First Name Column
+When the ‘First Name’ column is reviewed for unique first names there are 91,269 unique first names list. Upon closer inspection, one notices that the same name appears; however, in various formats.  To perform aggregations and identify unique individuals the first name will need to cleansed of the inconsistent data entry. This will ensure each record has one ‘clean’ name listed for the purpose of gender identification.
+
+Examples of data entry inconsistencies are noted below:
+
+
+Below shows that in the top 5 names form the sunshine list both the names David and John are listed twice due to case sensitivity.
 
  ![First_Name_Unique](https://user-images.githubusercontent.com/89538802/150036527-399dd2d5-fdc0-4380-b6e0-b7f3afb2a511.png)
 
@@ -79,9 +176,7 @@ Filtering on the name ‘Michael’, you will see that the ‘First Name’ colu
  ![michael](https://user-images.githubusercontent.com/89538802/150036615-438eafce-e754-4979-a7f8-e9a7d658dacc.png)
 
 
-The ‘First Name’ column will need to be cleansed to ensure each record has one ‘clean’ name listed for the purpose of gender and age identification. To do these the following data entry inconsistencies will need to scrubbed.
-
-# Steps to data cleansing:
+##### Steps to cleaning the 'first name' :
 
 All names will need to have case sensitivity corrected to first letter Capitalized, all subsequent letters to remain lower case. To do so, the following cleansing activities need to take place.  A copy of the ‘First Name’ column will be used to cleanse, called ‘clean_first_name’.
 
