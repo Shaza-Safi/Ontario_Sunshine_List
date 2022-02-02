@@ -248,7 +248,7 @@ preliminary notes
 - wages are still show gap
 
 ### $ Spent
-
+- Hydro/OPG was not added to sunshine list until 1999
 
 
 ## **Recommendations for Future Analysis/ Parking Lot items due to time and resource constraints:**
