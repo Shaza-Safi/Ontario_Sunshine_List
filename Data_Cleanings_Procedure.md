@@ -181,12 +181,12 @@ Filtering on the name ‘Michael’, you will see that the ‘First Name’ colu
 All names will need to have case sensitivity corrected to first letter Capitalized, all subsequent letters to remain lower case. To do so, the following cleansing activities need to take place.  A copy of the ‘First Name’ column will be used to cleanse, called ‘clean_first_name’.
 
 
-1.	Start by converting the ‘clean_first_name’ column to all lower case.  By doing so, you can see the names David and Michael counts increasing.  We are now captured 30,512 of the 37,964 ‘first names’ listed with some form of “david”.
+1)	Start by converting the ‘clean_first_name’ column to all lower case.  By doing so, you can see the names David and Michael counts increasing.  We are now captured 30,512 of the 37,964 ‘first names’ listed with some form of “david”.
 
 ![image](https://user-images.githubusercontent.com/89538802/150037498-d1ca6403-7e68-4609-8b1c-a45bd0aa876c.png)
 
 
-2.	Using the character count column created, review the data by 1, 2, 3, 4 character length names.  Several combinations of data entry inconsistencies on the ‘First Name’ will come to view.
+2)	Using the character count column created, review the data by 1, 2, 3, 4 character length names.  Several combinations of data entry inconsistencies on the ‘First Name’ will come to view.
 - There are 1935 records with a ‘first name’ only denoted as an initial.  These will need to be reviewed and matched against all historical records to determine the full ‘first name’ if possible. This will be required for the machine learning model for gender and age identification.
 - There are significantly more records with a ‘first name’ with 2 characters. There are a combination of full ‘first name’, initial followed by a ‘.’ and 2 initial ‘first names’.  The ‘.’ Characters will need to removed from the ‘cleansed_first_name’.  As with the 1 character list, these records will need to be reviewed and matched against all historical records to determine if a full ‘first name’ can be populated
 
@@ -198,7 +198,9 @@ All names will need to have case sensitivity corrected to first letter Capitaliz
 	![Three_Four_Char](https://user-images.githubusercontent.com/89538802/150037235-34a2c042-544a-4481-8350-47fae3b933c8.png)
 
  -	Review ‘first names’ for any prefixes such as dr , mr, mrs, miss and remove from the ‘first name’
- -	Review ‘first names’ for punctuation such as comma
+ -	Review ‘first names’ for punctuation such as comma and replace with ""
+  -	Review ‘first names’ for punctuation such as period and replace with " "
+ 
 
 
 ![word_count](https://user-images.githubusercontent.com/89538802/150037083-5142cd04-f31f-4afb-9f60-020e3de02e55.png)
@@ -206,6 +208,69 @@ All names will need to have case sensitivity corrected to first letter Capitaliz
 
 
 ![agostino](https://user-images.githubusercontent.com/89538802/150037410-7353ec19-d438-4096-94c5-3ed05c72dd01.png)
+
+
+3) Using the str.split function
+    a) Clean_first_name column - remove all the text after the first white space
+    b) Clean_alt_first_name column - extract all the text after the first white space
+    
+4) Convert all Clean_alt_first_name to lower case
+
+5) Create a new column called clean_char_count (calculated a character count on the clean_first_name column)
+
+6) Using conditions based on the clean_char_count and final_first_name columns update the final_first_name column
+*insert Final First Name image*
+
+7) Create a new column called final_char_count (calculated a character count on the final_first_name column)
+
+8) Convert final_first_name to lower case
+
+### Dropping of Records:
+
+The DataFrame is reviewed based on various character count columns and decisions made to drop certain non-value added 'dirty' rows. Prior to any records being dropped, the Sunshine_data_df contains 1,676,558 records (rows) with 21 columns. Steps are listed below:
+
+1) Drop all records with a first name containing a character count of less than 2.  The Sunshine_data_df reduces by 1,187 records.
+
+2) Drop all records with null values in the final_char_count column.  The Sunshine_data_df reduces by an additional 7,256 records.
+
+3) Drop all records where final char count is 2 AND clean_char_count is <=2. The Sunshine_data_df reduces by an additional 2,986 records.
+
+4) Further review of the data still show some funny 'first name' records containing brackets, hidden characters not identified and apostophes.  Using str.replace these characters are replaced with either a null or  white space
+
+5) Refresh the final_char_count by creating a secondary final_char_count2 column
+
+6) Drop all records where final char count2 is <=2. The Sunshine_data_df reduces by an additional 2,934 records.
+
+*NOTE: there are additional funny hidden characters in records, example index 1764: where the final first name is "skip"   This is dealt with in our SQL database process.*
+
+*insert skip example*
+
+
+The Sunshine_data_df now contains 1,662,195 records. This represents 99.1% of the intial 1,676,558 records prior to data cleansing.
+
+### Create a Unique Last, First Name 
+For data analysis purposes a unique last, first name column is created in an effort to identify unique employees.
+
+
+
+## Creating Unique First Names for Machine Learning Model
+The machine learning model will use a unique list of first names from the Sunhine list to predict a gender.  A final review of the data shows some funnies due to hidden characters.  These names will be deleted using the noted index number.
+
+*insert first_names_ML image*
+
+The model will be fed 28,774 unique first names.
+
+
+## Export to SQL database
+
+1) For all datasets in question (Statistics Canada and Sunshine List) Only those columns needed for analysis and fed into the SQL database will be reordered and renamed.
+
+2) Tables will be imported into a SQL database using sqlalchemy
+    - the unique_sunshine_name_sorted will be imported as the ml_first_names table
+    - the sunshine_data_df will be imported as sunshine_table
+    - the Ontario_Wages will be imported as ontario_wage_table
+    - cpi_df will be imported as cpi_table
+
 
 
 
