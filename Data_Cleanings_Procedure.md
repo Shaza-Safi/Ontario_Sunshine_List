@@ -115,7 +115,7 @@ A value counts query shows that there are 81 unique sectors in the current DataF
 
 The result of the cleansing provides a reduction of sectors from 81 to  8 unique sector categories.
 
-*insert sector image*
+![Sector](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/Data%20Cleansing/Sectors.png)
 
 
 #### Last Name Column
@@ -130,7 +130,7 @@ A value counts query shows that there are 8,666 unique sectors in the current Da
 
 The result of the cleansing provides a reduction of employers from 8,666 to  7,966 unique employer names.
 
-*insert Big Brother image*
+![BigBrother](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/Data%20Cleansing/BigBrother.png)
 
 #### City Column
 For the purpose of reviewing the Sunshine list and providing a visual on where in Ontario those positions making over $100,000 are situated, an attempt has been made to identify the city by using the Employer and Job Title information.  Cleansing actions performed are 100% manual and use the str.contains function to replace specific text with city names.
@@ -143,7 +143,7 @@ For the purpose of reviewing the Sunshine list and providing a visual on where i
 The following is a link to the city.csv file used to cleanse in step 4.
 *insert link to city.csv*
 
-*insert additional SQL cleansing required on city and logic*
+[City List Link](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Resources/city.csv)
 
 
 #### Cleansed Job Title Column
