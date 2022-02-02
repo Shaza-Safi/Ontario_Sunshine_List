@@ -244,7 +244,7 @@ Data analysis is being done by all team members separately to uncover trends and
 
 preliminary notes
 ### Gender Gap:
-- the number of women employed has now equalized with men in 2020....from 30ish% in 1996 to 50% in 2020
+- the number of women employed has now equalized with men in 2020....from 24.3% in 1996 to 49.4% in 2020
 - wages are still show gap
 
 ### $ Spent
