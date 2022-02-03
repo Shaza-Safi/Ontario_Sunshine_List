@@ -244,7 +244,7 @@ The DataFrame is reviewed based on various character count columns and decisions
 
 *NOTE: there are additional funny hidden characters in records, example index 1764: where the final first name is "skip"   This is dealt with in our SQL database process.*
 
-![SkipExample]https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/Data%20Cleansing/Skip.png)
+![SkipExample](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/Data%20Cleansing/Skip.png)
 
 The Sunshine_data_df now contains 1,662,195 records. This represents 99.1% of the intial 1,676,558 records prior to data cleansing.
 
@@ -256,7 +256,7 @@ For data analysis purposes a unique last, first name column is created in an eff
 ## Creating Unique First Names for Machine Learning Model
 The machine learning model will use a unique list of first names from the Sunhine list to predict a gender.  A final review of the data shows some funnies due to hidden characters.  These names will be deleted using the noted index number.
 
-![FirstNameML]https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/Data%20Cleansing/first_names_ML.png)
+![FirstNameML](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/Data%20Cleansing/first_names_ML.png)
 
 The model will be fed 28,774 unique first names.
 
@@ -281,7 +281,7 @@ Data requiring further cleansing are as follows:
 
 1) The update query to populate the gender in the sunshine_table from the machine learning model resulted in 42 records with no gender. These funny data records appear to continue to have hidden characters.  For our purposes, these records are deleted.
 
-![SQLFunnies]https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/SQL%20Cleansing/SQL_funnies.png)
+![SQLFunnies](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/SQL%20Cleansing/SQL_funnies.png)
 
 2) A review of the city column highlights that 429,019 records have no city identified.  Of the records not identified a high portion belong to Hydro One, Ontario Power Generation and OPP.  Given that analysis has shown that some of the highest earners from the sunshine list belong to the Hydro/OPG, it is best not to delete these records.  These records will be updated with the city for their perspective headquarters.
 
