@@ -1,6 +1,6 @@
 # **Data Cleansing Procedure**
 
-*insert link to StasCan_Ontario_cleasning.ipynb*
+[Link to StatCan_Ontario_Cleansing file](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/StatsCan_Ontario_cleansing.ipynb)
 
 ## **Statistics Canada CPI**
 The data from Statics Canada is clean. For the purpose of analysis, only the Product Group 'All-items' was kept.  All other groups were removed from the dataframe prior to import into the SQL table.
@@ -55,7 +55,7 @@ Lastly, the NOC column was reviewed and all categories removed with the exceptio
 ## **Sunshine List**
 The Sunshhine list is an annualizd publication of all Ontario public employees with salaraies >= $100,000. This list is a amalgamation of several sectors over a multitude of employers. Given the 25 year span of data and inconsistent approach to data entry of fields being reported on, the consolidated Sunshine List for years 1996 to 2020 requires significant cleansing on various fields for the benefit of clean dashboard visualizations.  Below details steps taken for the purpose of analysis.
 
-*insert link to Sunshine_Data_cleasning.ipynb*
+[Link to Sunshine Cleansing file](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/SunshineList_DataCleansing.ipynb)
 
 
 ### Step 1 Consolidation of 1996 to 2020 dataset
@@ -219,7 +219,8 @@ All names will need to have case sensitivity corrected to first letter Capitaliz
 5) Create a new column called clean_char_count (calculated a character count on the clean_first_name column)
 
 6) Using conditions based on the clean_char_count and final_first_name columns update the final_first_name column
-*insert Final First Name image*
+
+![FinalFirstName](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/Data%20Cleansing/Final_First_Name.png)
 
 7) Create a new column called final_char_count (calculated a character count on the final_first_name column)
 
@@ -243,8 +244,7 @@ The DataFrame is reviewed based on various character count columns and decisions
 
 *NOTE: there are additional funny hidden characters in records, example index 1764: where the final first name is "skip"   This is dealt with in our SQL database process.*
 
-*insert skip example*
-
+![SkipExample]https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/Data%20Cleansing/Skip.png)
 
 The Sunshine_data_df now contains 1,662,195 records. This represents 99.1% of the intial 1,676,558 records prior to data cleansing.
 
@@ -256,7 +256,7 @@ For data analysis purposes a unique last, first name column is created in an eff
 ## Creating Unique First Names for Machine Learning Model
 The machine learning model will use a unique list of first names from the Sunhine list to predict a gender.  A final review of the data shows some funnies due to hidden characters.  These names will be deleted using the noted index number.
 
-*insert first_names_ML image*
+![FirstNameML]https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/Data%20Cleansing/first_names_ML.png)
 
 The model will be fed 28,774 unique first names.
 
@@ -281,24 +281,27 @@ Data requiring further cleansing are as follows:
 
 1) The update query to populate the gender in the sunshine_table from the machine learning model resulted in 42 records with no gender. These funny data records appear to continue to have hidden characters.  For our purposes, these records are deleted.
 
-*insert funnies image*
+![SQLFunnies]https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/SQL%20Cleansing/SQL_funnies.png)
 
 2) A review of the city column highlights that 429,019 records have no city identified.  Of the records not identified a high portion belong to Hydro One, Ontario Power Generation and OPP.  Given that analysis has shown that some of the highest earners from the sunshine list belong to the Hydro/OPG, it is best not to delete these records.  These records will be updated with the city for their perspective headquarters.
 
     Hydro One is assigned to Toronto
     Ontario Power Generation is assigned to Clarington
     OPP is assigned to Orillia
-    
-    
-    *insert no city image*
 
+![NoCity](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/SQL%20Cleansing/NoCity.png)
+    
 3) A review of maximum salaries highlighted that in 2006 two individuals were paid an annual salary of > $12 million.  A closer look was taken to review the individuals in question: Joanne Yelle Weatherall and Stephen Harris. Historical salaries were reviewed for both employees. It is clear from the data that these salaries are finger fumbles where the decimal was misplaced.  An Update query is used to correct the gross inflattion of these salary records.
 
-*insert 12 million salary*
+![12Million](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/SQL%20Cleansing/TwelveMillionSalary.png)
 
-*insert screen shot of Joanne Yelle Weatherall*
+Cleansing Joanne Yelle Weatherall
+![Joanne](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/SQL%20Cleansing/Joanne_YelleWeatherall.png)
 
-*insert screen shot of Stephen Harris*
+Cleansing Stephen Harris
+![Stephen](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/SQL%20Cleansing/Stephen_Harris.png)
+
+
 
 
 
