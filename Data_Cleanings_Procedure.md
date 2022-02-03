@@ -1,16 +1,19 @@
 # **Data Cleansing Procedure**
 
+**NOTE:** For all statistics Canada data, the 'CSV for Database Loading' were used for to extact the CSV files used for our datasets.
+
 [Link to StatCan_Ontario_Cleansing file](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/StatsCan_Ontario_cleansing.ipynb)
 
 ## **Statistics Canada CPI**
 The data from Statics Canada is clean. For the purpose of analysis, only the Product Group 'All-items' was kept.  All other groups were removed from the dataframe prior to import into the SQL table.
 
-The Consumer Price Index (CPI)  represents changes in prices as experienced by Canadian consumers. It measures price change by comparing, through time, the cost of a fixed basket of goods and services.
-
-What is the Canadian CPI [Refer to: An Overview of Canada's Consumer Price Index (CPI)](https://www150.statcan.gc.ca/eng/sc/video/cpi)
-
 <img width="800" alt="CPI" src="https://user-images.githubusercontent.com/89538802/151232562-968cbbde-1405-4053-bf81-d446a140fdb7.PNG">
 
+*Definitions of Note:*
+
+**The Consumer Price Index (CPI)**  represents changes in prices as experienced by Canadian consumers. It measures price change by comparing, through time, the cost of a fixed basket of goods and services.
+
+What is the Canadian CPI? [Refer to: An Overview of Canada's Consumer Price Index (CPI)](https://www150.statcan.gc.ca/eng/sc/video/cpi)
 
 ## **Statistics Canada Ontario Wage Data**
 The data from  Statics Canada for wages in Ontario by National Occupational Classification (NOC) allowed the user to add additional filters for gender and age categories.  4 files were extracted via CSV and required consolidation into 1 DataFrame
@@ -24,11 +27,13 @@ Datasets in the forms of CSV were pulled from Statistics Canada using the follow
 - Sexes:  Male and Female
 - Age Group:  25 to 54 years and >55 years old
     
-Definitions:
-- Full-time employees are those who usually work 30 hours or more per week at their main or only job. Estimates in thousands, rounded to the nearest hundred.
-- NOC stands for National Occupational Classification
+*Definitions of Note:*
 
-NOTE: CSV for Database Loading were used for downloads.
+**Full-time employees** are those who usually work 30 hours or more per week at their main or only job. Estimates in thousands, rounded to the nearest hundred.
+
+**NOC** stands for National Occupational Classification
+
+
 
 The dataset contained several columns not required for the purpose of our analysis.  Unnecessary columns were removed
 
