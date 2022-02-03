@@ -275,19 +275,26 @@ The model will be fed 28,774 unique first names.
 # SQL Database Deeper Dive Cleansing
 The data is reviewed again in SQL to ensure tables imported successfully and do deeper dive cleansing where necessary depending on preliminary data analysis performed.
 
-The sunshine table has a total of 1,662,153 records for analysis. 14,405 dirty records were removed from the dataset, which is less than 1% of the total records.
+The sunshine table has a total of 1,662,195 records imported for analysis. 14,405 dirty records were removed from the dataset, which is less than 1% of the total records.
 
 Data requiring further cleansing are as follows:
 
-1) The update query to populate the gender in the sunshine_table from the machine learning model resulted in 40 records with no gender.  These records are deleted.
+1) The update query to populate the gender in the sunshine_table from the machine learning model resulted in 42 records with no gender. These funny data records appear to continue to have hidden characters.  For our purposes, these records are deleted.
 
-2) A review of the city column highlights that x records have no city identified.  Of the records not identified a high portion belong to Hydro One, Ontario Power Generation and OPP.  Given that analysis has shown that some of the highest earners from the sunshine list belong to the Hydro/OPG, it is best not to delete these records.  These records will be updated with the city for their perspective headquarters
+*insert funnies image*
+
+2) A review of the city column highlights that 429,019 records have no city identified.  Of the records not identified a high portion belong to Hydro One, Ontario Power Generation and OPP.  Given that analysis has shown that some of the highest earners from the sunshine list belong to the Hydro/OPG, it is best not to delete these records.  These records will be updated with the city for their perspective headquarters.
 
     Hydro One is assigned to Toronto
     Ontario Power Generation is assigned to Clarington
     OPP is assigned to Orillia
+    
+    
+    *insert no city image*
 
 3) A review of maximum salaries highlighted that in 2006 two individuals were paid an annual salary of > $12 million.  A closer look was taken to review the individuals in question: Joanne Yelle Weatherall and Stephen Harris. Historical salaries were reviewed for both employees. It is clear from the data that these salaries are finger fumbles where the decimal was misplaced.  An Update query is used to correct the gross inflattion of these salary records.
+
+*insert 12 million salary*
 
 *insert screen shot of Joanne Yelle Weatherall*
 
