@@ -1,7 +1,7 @@
 # **Sunshine List:**  Can it be used to evaluate fairness in the Ontario workforce?
 University of Toronto Data Analytics Bootcamp Final Project
 
-## [Link to final project webpage](https://shaza-safi.github.io/Final-Project-Website/)
+## [Link to final project webpage](https://shaza-safi.github.io/Final-Project-Sunshine-Segment3/)
 ![SunshineList1280x720___Gallery](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/SunshineList1280x720___Gallery.jpg)
 
 
