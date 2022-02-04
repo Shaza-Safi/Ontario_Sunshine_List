@@ -146,7 +146,7 @@ CSV files from various sources were used create our database. Sources and links 
 
 The Sunshhine list is an annualizd publication of all Ontario public employees with salaraies >= $100,000. This list is a amalgamation of several sectors over a multitude of employers. Given the 25 year span of data and inconsistent approach to data entry of fields being reported on, the consolidated Sunshine List for years 1996 to 2020 requires significant cleansing on various fields for the benefit of clean dashboard visualizations. Detailed steps on data preprocessing for the purpose of analysis can be found in the Data Cleansing Procedure documentation.  
 
-[Link to Data Cleansing Procedure](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/Data_Cleanings_Procedure.md)
+[Link to Data Cleansing Procedure](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Data_Cleanings_Procedure.md)
 
 #### 3) Load
 ##### **Database:**
