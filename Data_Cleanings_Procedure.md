@@ -323,7 +323,9 @@ Cleansing Joanne Yelle Weatherall
 Cleansing Stephen Harris
 ![Stephen](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/SQL%20Cleansing/Stephen_Harris.png)
 
+Both records are updated manually
 
+*insert salary correction image*
 
 
 
