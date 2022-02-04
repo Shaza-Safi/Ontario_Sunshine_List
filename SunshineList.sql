@@ -273,8 +273,25 @@ SELECT COUNT(INDEX)
 FROM sunshine_table
 -- WHERE year='2020'
 
-SELECT * FROM sunshine_table
 
+--*****************************
+--Create Male & Female counter column
+ALTER TABLE sunshine_table
+ADD Male_Count INT,
+ADD Female_Count INT;
+
+--Update Male_Count
+UPDATE sunshine_table 
+SET
+Male_Count = CASE WHEN gender='M' THEN 1 ELSE 0 END;
+
+--Update Female_Count
+UPDATE sunshine_table 
+SET
+Female_Count = CASE WHEN gender='F' THEN 1 ELSE 0 END;
+
+
+SELECT * FROM sunshine_table
 
 --reivew salary bins
 SELECT salary_bin, COUNT(salary_bin)

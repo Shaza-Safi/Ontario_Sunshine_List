@@ -57,7 +57,7 @@ Given the data available, can we use 25 years of data to determine whether the O
 
 ![pipeline](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/PipelineInstructions.PNG)
 
-## 
+
 
 ### Locations of Project Deliverables:
 
@@ -77,34 +77,37 @@ Given the data available, can we use 25 years of data to determine whether the O
 ## **Technologies & Tools Used:**
 
 ### Tools:
-* PostgreSQL used to house the Sunshine list and Statistics Canada data
-* Tableau used to display Dashboard
+* pgAdmin 4 used to house the Sunshine list and Statistics Canada data
+* Tableau Public used to display Dashboard
 * Jupyter Notebook used for data extraction/transformation, data analysis and machine learning model
-* GitHub 
-* AWS used for hosting 
+* GitHub.io
+* Visual Studio Code Version: 1.60.0
+* AWS RDS instance used for hosting 
 * Quick Database Diagram used for ERD https://app.quickdatabasediagrams.com/#/
 
 ### Languages:
-* Python
-* SQL
+* Python 3.7.10, 
+* Conda *4.10.3*
+* PostgreSQL
 * JavaScript, HTML 
 
 ### Libraries:
 * pandas
-* Regular Expression RegEx
+* *Regular Expression RegEx*
 * Matplotlib 
 * random 
 * nltk
 * sklearn
-* Css 
+* Style.css 
 * Bootstrap
 
+### Resources:
+* see ETL process
 
 ### Algorithms:
 * to be updated in next segment
 
 
-##
 ## **Data Exploration Phase:**
 ### ETL Process 
 
