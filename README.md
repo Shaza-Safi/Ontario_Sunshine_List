@@ -35,9 +35,10 @@ We chose this topic for the following reasons:
 Given the data available, can we use 25 years of data to determine whether the Ontario Sunshine list is still relevant? 
 
 - Can we identify gender using first name? 
+- Can we identify a person’s age based on first name or postition?
 - How do civil servant salaries trend against Ontario private sector?
 - Is there Gender Inequality in Ontario’s Sunshine list?  
-- Does gender play a factor? Is region a factor?
+- Does gender or age play a factor? Is region a factor?
 - Are civil servant salaries keeping up with inflation?
 - How do civil servant salaries trend against Ontario private sector?
 - Can raises, salary increases be track? Are they in proportion with inflation? who is getting raises? 
@@ -54,8 +55,9 @@ Given the data available, can we use 25 years of data to determine whether the O
 
 ##  Pipeline Assembly Instructions
 
-*insert link to pipeline instructions md ---need to create*
+![pipeline](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/PipelineInstructions.PNG)
 
+## 
 
 ### Locations of Project Deliverables:
 
@@ -69,46 +71,40 @@ Given the data available, can we use 25 years of data to determine whether the O
 | Machine Learning code and output | [Link to ML model](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Machine_Learning_Model_Gender_Prediction.ipynb) |
 
 ### Changes from Seg2 submission to Seg3 submission
-* hosting Tableau Dashboard on AWS
-* changes to Machine Learning Mode????
 
-
- *insert comments on changes from 2 to 3 submission*     
+      
 
 ## **Technologies & Tools Used:**
 
 ### Tools:
-* pgAdmin 4 used to house the Sunshine list and Statistics Canada data
-* Tableau Public used to display Dashboard
+* PostgreSQL used to house the Sunshine list and Statistics Canada data
+* Tableau used to display Dashboard
 * Jupyter Notebook used for data extraction/transformation, data analysis and machine learning model
-* GitHub.io
-* Visual Studio Code Version: 1.60.0
-* AWS RDS instance used for hosting 
+* GitHub 
+* AWS used for hosting 
 * Quick Database Diagram used for ERD https://app.quickdatabasediagrams.com/#/
 
 ### Languages:
-* Python 3.7.10, 
-* Conda *4.10.3*
-* PostgreSQL
+* Python
+* SQL
 * JavaScript, HTML 
 
 ### Libraries:
 * pandas
-* *Regular Expression RegEx*
+* Regular Expression RegEx
 * Matplotlib 
 * random 
 * nltk
 * sklearn
-* Style.css 
+* Css 
 * Bootstrap
 
-### Resources:
-* see ETL process
 
 ### Algorithms:
 * to be updated in next segment
 
 
+##
 ## **Data Exploration Phase:**
 ### ETL Process 
 
@@ -146,7 +142,7 @@ CSV files from various sources were used create our database. Sources and links 
 
 The Sunshhine list is an annualizd publication of all Ontario public employees with salaraies >= $100,000. This list is a amalgamation of several sectors over a multitude of employers. Given the 25 year span of data and inconsistent approach to data entry of fields being reported on, the consolidated Sunshine List for years 1996 to 2020 requires significant cleansing on various fields for the benefit of clean dashboard visualizations. Detailed steps on data preprocessing for the purpose of analysis can be found in the Data Cleansing Procedure documentation.  
 
-[Link to Data Cleansing Procedure](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Data_Cleanings_Procedure.md)
+[Link to Data Cleansing Procedure](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/Data_Cleanings_Procedure.md)
 
 #### 3) Load
 ##### **Database:**
@@ -248,11 +244,11 @@ Data analysis is being done by all team members separately to uncover trends and
 
 preliminary notes
 ### Gender Gap:
-- the number of women employed has now equalized with men in 2020....from 24.3% in 1996 to 49.4% in 2020
+- the number of women employed has now equalized with men in 2020....from 30ish% in 1996 to 50% in 2020
 - wages are still show gap
 
 ### $ Spent
-- Hydro/OPG was not added to sunshine list until 1999
+
 
 
 ## **Recommendations for Future Analysis/ Parking Lot items due to time and resource constraints:**
@@ -263,9 +259,8 @@ preliminary notes
 
 ## **Issues Encountered:**
 - GitHub size constrainsts 
-- We chose to only use relationships between the Statistics Canada and Sunshine datasets, as unions and/or joins would have cause record duplications, limiting us on how we could display some of the data
+- We chose to only use relationships between the Statistics Canada and Sunshine datasets, as unions would have cause record duplications, limiting us on how we could display some of the data
 - Sunshine dataset very messy and requires exhaustive cleansing:
-
       - on job titles require more standardization
       - employer names require more standardization/clean up
       - only records were employer name or title contain a city could be identified. Assumptions were made for large employer such as Hydro, OPP and headquarter locations used
