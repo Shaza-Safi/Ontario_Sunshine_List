@@ -7,6 +7,8 @@
 ## **Statistics Canada CPI**
 The data from Statics Canada is clean. For the purpose of analysis, only the Product Group 'All-items' was kept.  All other groups were removed from the dataframe prior to import into the SQL table.
 
+### Step 1 - Keep only Product Group 'All-items'
+
 <img width="800" alt="CPI" src="https://user-images.githubusercontent.com/89538802/151232562-968cbbde-1405-4053-bf81-d446a140fdb7.PNG">
 
 *Definitions of Note:*
@@ -17,6 +19,8 @@ What is the Canadian CPI? [Refer to: An Overview of Canada's Consumer Price Inde
 
 ## **Statistics Canada Ontario Wage Data**
 The data from  Statics Canada for wages in Ontario by National Occupational Classification (NOC) allowed the user to add additional filters for gender and age categories.  4 files were extracted via CSV and required consolidation into 1 DataFrame
+
+### Step 1 - Filter requirement for data extract from Statistics Canada website
 
 Datasets in the forms of CSV were pulled from Statistics Canada using the following filters:
 
@@ -33,32 +37,39 @@ Datasets in the forms of CSV were pulled from Statistics Canada using the follow
 
 **NOC** stands for National Occupational Classification
 
-
+### Step 2 - Remove Columns
 
 The dataset contained several columns not required for the purpose of our analysis.  Unnecessary columns were removed
 
 ![Wage_OriginalColumns](https://user-images.githubusercontent.com/89538802/151234245-27567e41-43a5-48b9-a0e1-610e7753f5a7.png)
 
+### Step 3 - Remove Null Values
+
 The dataset was reviewed for null values, which showed 96 records for the column VALUE, which is the average weekly wage as null. These records were removed.
 
 ![Wage_NullValues](https://user-images.githubusercontent.com/89538802/151234942-5fe4e7f3-ba2c-4aef-97cf-89f0177d4438.png)
+
+### Step 4 - Change Datatypes
 
 The dataset was reviewed for datatypes.  For the purpose of our analysis, percision on the VALUE column is not required; therefore the datatype was changed from a FLOAT to an integer for ease of data review.
 
 ![Wage_DataType](https://user-images.githubusercontent.com/89538802/151235284-8d614597-7c8e-4261-9ab8-4ca64a647c70.png)
 
+### Step 5 - Create Annualized Wage Column
 
 A calculated column was created for an annualized wage for ease of data analysis when comparing to the sunshine list.
 
 ![Wage_AnnualWage](https://user-images.githubusercontent.com/89538802/151235722-416ee8c2-b092-4db9-8220-65fb5fd4067a.png)
 
-Lastly, the NOC column was reviewed and all categories removed with the exception of NOC 'Total employees, all occupations'
+### Step 6 - Remove Rows
+
+The NOC column was reviewed and all categories removed with the exception of NOC 'Total employees, all occupations'
 
 ![Wage_NOC](https://user-images.githubusercontent.com/89538802/151236055-855d9117-32e9-49ba-9642-78e4aa25a005.png)
 
 
 ## **Sunshine List**
-The Sunshhine list is an annualizd publication of all Ontario public employees with salaraies >= $100,000. This list is a amalgamation of several sectors over a multitude of employers. Given the 25 year span of data and inconsistent approach to data entry of fields being reported on, the consolidated Sunshine List for years 1996 to 2020 requires significant cleansing on various fields for the benefit of clean dashboard visualizations.  Below details steps taken for the purpose of analysis.
+The Sunshine list is an annualizd publication of all Ontario public employees with salaraies >= $100,000. This list is a amalgamation of several sectors over a multitude of employers. Given the 25 year span of data and inconsistent approach to data entry of fields being reported on, the consolidated Sunshine List for years 1996 to 2020 requires significant cleansing on various fields for the benefit of clean dashboard visualizations.  Below details steps taken for the purpose of analysis.
 
 [Link to Sunshine Cleansing file](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/SunshineList_DataCleansing.ipynb)
 
@@ -231,7 +242,7 @@ All names will need to have case sensitivity corrected to first letter Capitaliz
 
 8) Convert final_first_name to lower case
 
-### Dropping of Records:
+### Step 4 - Dropping of Records:
 
 The DataFrame is reviewed based on various character count columns and decisions made to drop certain non-value added 'dirty' rows. Prior to any records being dropped, the Sunshine_data_df contains 1,676,558 records (rows) with 21 columns. Steps are listed below:
 
@@ -253,7 +264,7 @@ The DataFrame is reviewed based on various character count columns and decisions
 
 The Sunshine_data_df now contains 1,662,195 records. This represents 99.1% of the intial 1,676,558 records prior to data cleansing.
 
-### Create a Unique Last, First Name 
+### Step 5 -  Create Column: Last, First Name 
 For data analysis purposes a unique last, first name column is created in an effort to identify unique employees.
 
 
@@ -268,27 +279,32 @@ The model will be fed 28,774 unique first names.
 
 ## Export to SQL database
 
-1) For all datasets in question (Statistics Canada and Sunshine List) Only those columns needed for analysis and fed into the SQL database will be reordered and renamed.
+### Step 1
+For all datasets in question (Statistics Canada and Sunshine List) Only those columns needed for analysis and fed into the SQL database will be reordered and renamed.
 
-2) Tables will be imported into a SQL database using sqlalchemy
-    - the unique_sunshine_name_sorted will be imported as the ml_first_names table
-    - the sunshine_data_df will be imported as sunshine_table
-    - the Ontario_Wages will be imported as ontario_wage_table
-    - cpi_df will be imported as cpi_table
+### Step 2
+Tables will be imported into a SQL database using sqlalchemy:
+
+- the unique_sunshine_name_sorted will be imported as the ml_first_names table
+- the sunshine_data_df will be imported as sunshine_table
+- the Ontario_Wages will be imported as ontario_wage_table
+- cpi_df will be imported as cpi_table
 
 
-# SQL Database Deeper Dive Cleansing
+## SQL Database Deeper Dive Cleansing
 The data is reviewed again in SQL to ensure tables imported successfully and do deeper dive cleansing where necessary depending on preliminary data analysis performed.
 
 The sunshine table has a total of 1,662,195 records imported for analysis. 14,405 dirty records were removed from the dataset, which is less than 1% of the total records.
 
 Data requiring further cleansing are as follows:
 
-1) The update query to populate the gender in the sunshine_table from the machine learning model resulted in 42 records with no gender. These funny data records appear to continue to have hidden characters.  For our purposes, these records are deleted.
+### Step 1 Update Gender Column Values
+The update query to populate the gender in the sunshine_table from the machine learning model resulted in 42 records with no gender. These funny data records appear to continue to have hidden characters.  For our purposes, these records are deleted.
 
 ![SQLFunnies](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/SQL%20Cleansing/SQL_funnies.png)
 
-2) A review of the city column highlights that 429,019 records have no city identified.  Of the records not identified a high portion belong to Hydro One, Ontario Power Generation and OPP.  Given that analysis has shown that some of the highest earners from the sunshine list belong to the Hydro/OPG, it is best not to delete these records.  These records will be updated with the city for their perspective headquarters.
+### Step 2 Update City Column Values for Specific Employers
+A review of the city column highlights that 429,019 records have no city identified.  Of the records not identified a high portion belong to Hydro One, Ontario Power Generation and OPP.  Given that analysis has shown that some of the highest earners from the sunshine list belong to the Hydro/OPG, it is best not to delete these records.  These records will be updated with the city for their perspective headquarters.
 
     Hydro One is assigned to Toronto
     Ontario Power Generation is assigned to Clarington
@@ -296,7 +312,8 @@ Data requiring further cleansing are as follows:
 
 ![NoCity](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/SQL%20Cleansing/NoCity.png)
     
-3) A review of maximum salaries highlighted that in 2006 two individuals were paid an annual salary of > $12 million.  A closer look was taken to review the individuals in question: Joanne Yelle Weatherall and Stephen Harris. Historical salaries were reviewed for both employees. It is clear from the data that these salaries are finger fumbles where the decimal was misplaced.  An Update query is used to correct the gross inflattion of these salary records.
+### Step 3 Review Salary Paid Data Funnies
+A review of maximum salaries highlighted that in 2006 two individuals were paid an annual salary of > $12 million.  A closer look was taken to review the individuals in question: Joanne Yelle Weatherall and Stephen Harris. Historical salaries were reviewed for both employees. It is clear from the data that these salaries are finger fumbles where the decimal was misplaced.  An Update query is used to correct the gross inflattion of these salary records.
 
 ![12Million](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/SQL%20Cleansing/TwelveMillionSalary.png)
 
