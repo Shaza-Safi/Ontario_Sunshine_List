@@ -35,10 +35,9 @@ We chose this topic for the following reasons:
 Given the data available, can we use 25 years of data to determine whether the Ontario Sunshine list is still relevant? 
 
 - Can we identify gender using first name? 
-- Can we identify a person’s age based on first name or postition?
 - How do civil servant salaries trend against Ontario private sector?
 - Is there Gender Inequality in Ontario’s Sunshine list?  
-- Does gender or age play a factor? Is region a factor?
+- Does gender play a factor? Is region a factor?
 - Are civil servant salaries keeping up with inflation?
 - How do civil servant salaries trend against Ontario private sector?
 - Can raises, salary increases be track? Are they in proportion with inflation? who is getting raises? 
@@ -55,8 +54,7 @@ Given the data available, can we use 25 years of data to determine whether the O
 
 ##  Pipeline Assembly Instructions
 
-![pipeline](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/PipelineInstructions.PNG)
-
+*insert link to pipeline instructions md ---need to create*
 
 
 ### Locations of Project Deliverables:
@@ -71,8 +69,11 @@ Given the data available, can we use 25 years of data to determine whether the O
 | Machine Learning code and output | [Link to ML model](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Machine_Learning_Model_Gender_Prediction.ipynb) |
 
 ### Changes from Seg2 submission to Seg3 submission
+* hosting Tableau Dashboard on AWS
+* changes to Machine Learning Mode????
 
-      
+
+ *insert comments on changes from 2 to 3 submission*     
 
 ## **Technologies & Tools Used:**
 
