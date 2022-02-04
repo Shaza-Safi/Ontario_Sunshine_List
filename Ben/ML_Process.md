@@ -10,7 +10,7 @@
 
 ---
 ## Machine Learning Hybrid Model Process Flow Diagram
-![](Images/ML_Hybrid_Model_Process_Flow_Diagram.png)
+![](ML_Process_MD_Images/ML_Hybrid_Model_Process_Flow_Diagram.png)
 
 ---
 ## 1. How does it work?
@@ -22,16 +22,16 @@
   * The frequency data represents the number of people in the US that possessed this respective name-       gender combination in a given year
   * Every year a new file is released in the same format however, the data is updated based on               births/deaths of people with that specific name-gender combination
   * For a name-gender combination to be included in the file, it must have at least 5 people in the U.S.     that fall under it, the following image depicts the format of the list: 
-![](Images/us_ss_ex.png)
+![](ML_Process_MD_Images/us_ss_ex.png)
   * After importing the necessary dependencies, the following code is used to (that have been downloaded     to my local machine) extract the data from each file and create an individual Pandas DataFrame (DF) for       each file: 
-![](Images/us_ss_df_creation.png)
+![](ML_Process_MD_Images/us_ss_df_creation.png)
   * After that the reduce function from the 'functools' library is imported and used to append all of       the individual DFs into one large DF: 
-![](Images/reduce.png)
-![](Images/reduce_output.png)
+![](ML_Process_MD_Images/reduce.png)
+![](ML_Process_MD_Images/reduce_output.png)
   * As you can see above, the output is a DF with over 2,000,000 rows
   * Next, a new DF is created by executing a groupby on the first name and gender columns (and               frequencies are summed) of the large DF created above
   * The result is a DF containing only the unique name-gender combinations across 140 years of US Social     Security Data, and their respective frequencies across the 140 years as well:
-![](Images/sum_frequencies.png)
+![](ML_Process_MD_Images/sum_frequencies.png)
 ## 2. Why this specific model?
 *
 *
