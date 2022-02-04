@@ -325,7 +325,7 @@ Cleansing Stephen Harris
 
 Both records are updated manually
 
-*insert salary correction image*
+![SalaryCleansing](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/SQL%20Cleansing/SalaryCorrection.png)
 
 
 
