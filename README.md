@@ -167,7 +167,7 @@ Machine learning tools will be used to predict gender for the list of names in t
 
 ![MachineLearningModel](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/ML%20images/ML_Model.png)
 
-[Link to Machine Learning Process](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle_new2/ML_Process.md)
+[Link to Machine Learning Process](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/ML_Process.md)
 
 ### Preliminary Data Processing:
 The following steps were used in the preliminary data processing stage:
