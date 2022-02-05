@@ -161,6 +161,10 @@ The image below represents the tables of data that are uploaded onto the databas
 ### Overall ML module Objective:
 Machine learning tools will be used to predict gender for the list of names in the sunshine list. This process is essential for the analysis and outputs/recommendations.
 
+### Machine Learning Hybrid Model Process Flow Diagram
+
+![MachineLearningModel](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/ML%20images/ML_Model.png)
+
 ### Preliminary Data Processing:
 The following steps were used in the preliminary data processing stage:
 - Downloaded US Social Security name-gender-frequency data onto local machine (1 file per year from 1880-2020)
