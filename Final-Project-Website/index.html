@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sunshine List</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/sunshine.jpg" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container-fluid">
+
+      <div id="logo" class="pull-left">
+        <h1>
+        <a href="#intro"><img src="" alt="" title=""  style="height: 32px"/>Sunshine List</a></h1>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#intro">Home</a></li>
+		  <li><a href="#overview">Overview</a></li>
+          <li><a href="#dataset">Dataset</a></li>
+          <li class="menu-has-children"><a href="#ETL">ETL Process</a>
+            <ul>
+              <li><a href="SunshineList_DataCleansing.html">Sunshine List Cleansing</a></li>
+              <li><a href="StatsCan_Ontario_cleansing.html">Stats Canada Cleansing</a></li>
+            </ul>
+          </li>
+          <li><a href="Data_Analysis.html">Analysis</a></li>
+          <li class="menu-has-children"><a href="#machinelearning">Machine Learning</a>
+            <ul>
+              <li><a href="#ml">Description</a></li>
+              <li><a href="Data_Bootcamp_Capstone_Project_Machine_Learning_Model.html">Code</a></li>
+            </ul>
+          </li>
+          <li><a href="#dashboard">Dashboard</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro">
+    <div class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active">
+            <div class="carousel-background"><img src="img/sunshine.jpg" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+				<p>&nbsp;</p>
+                <h2>Can the Ontario Sunshine List be used to evaluate fairness in the Ontario workforce?</h2>
+                <!--p>Can it be used to evaluate fairness in the Ontario workforce?Data Analytics Bootcamp Uft2021.</p-->
+				<p>&nbsp;</p>
+
+
+	
+			<div class="row">
+				<div class="col-lg-3 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <h4 class="title"><b>Shaza Safi</b></h4>
+			      <a href="https://github.com/Shaza-Safi" class="social-icon"><i class="fa fa-github" style="font-size:24px"></i></a>
+            <a href="https://www.linkedin.com/in/shaza-safi-528abb3b/" class="social-icon"><i class="fa fa-linkedin" style="font-size:24px"></i></a>
+            <a href="mailto:shaza.safi@hotmail.com>" class="social-icon"><i class="fa fa-envelope" style="font-size:24px"></i></a>
+          </div>
+		  
+		   <div class="col-lg-3 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <h4 class="title"><b>Danielle Spring</b></h4>            
+            <a href="https://github.com/DanielleSpring" class="social-icon"><i class="fa fa-github" style="font-size:24px"></i></a>
+            <a href="https://linkedin.com/in/danielle-spring-15435713/" class="social-icon"><i class="fa fa-linkedin" style="font-size:24px"></i></a>
+            <a href="mailto:daniellemulvihill@hotmail.com>" class="social-icon"><i class="fa fa-envelope" style="font-size:24px"></i></a>
+        </div>
+		  
+		   <div class="col-lg-3 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+			      <h4 class="title"><b>Ben Mogil</b></h4>
+            <a href="https://github.com/bmogil" class="social-icon"><i class="fa fa-github" style="font-size:24px"></i></a>
+            <a href="https://www.linkedin.com/in/ben-mogil-026273191/" class="social-icon"><i class="fa fa-linkedin" style="font-size:24px"></i></a>
+            <a href="mailto:benmogil24@gmail.com>" class="social-icon"><i class="fa fa-envelope" style="font-size:24px"></i></a>
+      </div>
+		  
+		  </div>
+		  
+
+            </div>
+          </div>
+
+        </div>
+
+       </div>
+      </div>
+    </div>
+  </section><!-- #intro -->
+
+  <main id="main">
+
+
+    <!--==========================
+      Overview Section
+    ============================-->
+    <section id="overview">
+      <div class="container">
+
+        <header class="section-header wow fadeInUp">
+          <h3>Overview</h3>
+          <p>The Sunshine list is annual list includes public sector employees in Ontario who earned over $100,000 last year. The list is mandated by the Public Sector Salary Disclosure Act enacted by the Ontario government under Premier Mike Harris, with the first list released in 1996.</p>
+          <h3>Objective</h3>
+          <p>By analyzing public sector incomes for those employees who earned over $100,000 annually, we seek to determine if the yearly publication can be used to evaluate fairness in the Ontario workforce. In our analysis we will be using the data to determine trends based on salaries, gender and potentially age and regions (urban vs rural). The sunshine list does not denote gender, age or location therefore we will use machine learning tools to predict gender/age and data cleansing teachniques to identify location.</p>
+	   </header>
+
+	   <div class="row">
+	    <div class="col-lg-12 col-md-12 box wow bounceInUp" data-wow-duration="1.4s">
+	   <h4 class="title">TECHNOLOGIES USED:</h4>
+	   </div>
+	   </div>
+	   
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><img src="img/python-logo-glassy.png" style="height: 32px"></i></div>
+            <h4 class="title">Python</h4>
+            <p class="description">The main language used through the project.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><img src="img/python-logo-glassy.png" style="height: 32px"></i></div>
+		    <h4 class="title">Pandas</h4>
+            <p class="description">Datasets cleansing, filtering and merging to a single dataset for further analysis. </p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+            <div class="icon"><img src="img/python-logo-glassy.png" style="height: 32px"></i></div>
+		    <h4 class="title">Matplotlib</h4>
+            <p class="description">Used for exploratory analysis.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="icon"><img src="img/python-logo-glassy.png" style="height: 32px"></i></div>
+			<h4 class="title">sklearn</h4>
+            <p class="description">Used sklearn & nltk library for machine learning</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="icon"><img src="img/html.jpg" style="height: 32px"></i></div>
+			<h4 class="title">HTML</h4>
+            <p class="description">Project Website development using html and JavaScript.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="icon"><img src="img/Bootstrap.png" style="height: 32px"></i></div>
+            <h4 class="title">Bootstrap</h4>
+            <p class="description">Project Website responsiveness and design.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #project -->
+
+
+    <!--==========================
+      Dataset Section
+    ============================-->
+    <section id="dataset"  class="wow fadeIn">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>Dataset</h3>
+          <!--p>Dataset obtained from Yelp.com, filtered and cleaned to get users reviews for restaurants located in Charlotte, NC.</p>
+		  <h4>Variables used for our analysis:</h4>
+			<ul> - Average Star Rating </ul> <ul> - Reactions (Useful, Funny, Cool) </ul-->
+        </header>	
+        <!--div class="row counters">
+          <div class="col-lg-4 col-6 text-center">
+            <span data-toggle="counter-up">4,210</span>
+            <p>Restaurants</p>
+  				</div>
+          <div class="col-lg-4 col-6 text-center">
+            <span data-toggle="counter-up">6,000,000</span>
+            <p>Yelp Reviews</p>
+  				</div>
+          <div class="col-lg-4 col-12 text-center">
+            <span data-toggle="counter-up">5</span>
+            <p>Years of Historical Data</p>
+  				</div>
+  			</div-->
+		<div class="row counters">
+
+          <div class="col-lg-7 col-md-5 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <h4 class="title"> <img src="img/kaggle.png" style="height: 35px"><b> Dataset used: Kaggle Dataset</h4>		
+            <p class="description"> We used kaggle consolidated dataset for Ontario Sunshine List 1996 to 2019 and appended the 2020 sunshine list to it.</p>
+            <h4 class="title"> <img src="img/stats_canada.jpg" style="height: 35px"> <b> Stats Canada Wages</h4>
+            <p class="description"> We used employee wages by occupation annualy to compare public sector wages to private sector wages. </p>
+            <h4 class="title"> <img src="img/stats_canada.jpg" style="height: 35px"> <b> Stats Canada Inflation</h4>
+            <p class="description"> We used Consume Price Index (CPI) statistics to compare if consumer inflation over the years has been taken into account in the sunshine list wages. </p>
+			<img src="img/yelp-buttons.png" style="height: 32px">
+		  </div>
+			<div class="dataset-img col-lg-6 col-6 text-center">
+				<img src="img/icon.png" alt="" class="img-fluid">
+			    <span data-toggle="counter-up">205,000</span><p><b>Number of Ontarian employees on the sunshine list in 2020 </b></p>
+  				</div>			
+      
+	  </div>
+    </section><!-- #dataset -->
+
+    <!--==========================
+      Machine Learning Section
+    ============================--> 
+
+  <section id="ml">
+      <div class="container">
+
+        <header class="section-header wow fadeInUp">
+          <h3>Machine Learning Objective</h3>
+          <header class="section-header wow fadeInUp">
+            <p>Machine learning tools will be used to predict gender for the list of names in the sunshine list. This process is essential for the analysis and outputs/recommendations.</p>
+       </header>
+       <h3>Overview of types of machine learning used</h3>
+          <header class="section-header wow fadeInUp">
+            <p>Our model has used two types of machine learning: Relative frequency classifier and Natural Language Toolkit (NLTK), a Python library that used supervised classification to determine a gender class (output) for each input (given name)</p>
+       </header>
+        </header>
+    </section><!-- #ml -->
+
+ <!--==========================
+    Dashboard Section
+  ============================-->
+    <section id="dashboard">
+      <div class="container">
+
+        <header class="section-header wow fadeInUp">
+          <h3>This is our awesome dashboard using tableau!</h3>
+          <div class='tableauPlaceholder' id='viz1643567063138' style='position: relative'><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Sunshine_Dashboard_Workbook&#47;Gender_Dashboard' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1643567063138');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.minHeight='750px';vizElement.style.maxHeight=(divElement.offsetWidth*1.77)+'px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        </header>
+    </section><!-- #dashboard -->
+
+ <div class="row">
+
+  </main>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+
+    <div class="container">
+      <div class="copyright" style="color:black">
+        &copy; Copyright <strong>BizPage</strong>. All Rights Reserved
+      </div>
+      <div class="credits" style="color:black">
+        Designed by <a href="https://bootstrapmade.com/" style="color:black">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
+  <!-- =======================================================
+    Theme Name: BizPage
+    Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
