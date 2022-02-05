@@ -10,7 +10,7 @@
 
 ---
 ## Machine Learning Hybrid Model Process Flow Diagram
-![](ML_Process_MD_Images/ML_Hybrid_Model_Process_Flow_Diagram.png)
+![MachineLearningProcess](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/ML%20images/ML_Model.png)
 
 ---
 ## 1. How does it work?
