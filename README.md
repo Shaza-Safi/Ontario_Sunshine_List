@@ -35,10 +35,9 @@ We chose this topic for the following reasons:
 Given the data available, can we use 25 years of data to determine whether the Ontario Sunshine list is still relevant? 
 
 - Can we identify gender using first name? 
-- Can we identify a person’s age based on first name or postition?
 - How do civil servant salaries trend against Ontario private sector?
 - Is there Gender Inequality in Ontario’s Sunshine list?  
-- Does gender or age play a factor? Is region a factor?
+- Does gender play a factor? Is region a factor?
 - Are civil servant salaries keeping up with inflation?
 - How do civil servant salaries trend against Ontario private sector?
 - Can raises, salary increases be track? Are they in proportion with inflation? who is getting raises? 
@@ -55,9 +54,7 @@ Given the data available, can we use 25 years of data to determine whether the O
 
 ##  Pipeline Assembly Instructions
 
-![pipeline](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/PipelineInstructions.PNG)
-
-## 
+*insert pipeline instruction.md*
 
 ### Locations of Project Deliverables:
 
@@ -71,40 +68,46 @@ Given the data available, can we use 25 years of data to determine whether the O
 | Machine Learning code and output | [Link to ML model](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Machine_Learning_Model_Gender_Prediction.ipynb) |
 
 ### Changes from Seg2 submission to Seg3 submission
-
+- Modified Machine Learning Model and added a Machine Learning Model process document
+- Added a Data Cleansing Procedure document
+- Tweaked Readme to remove all add references 
+- 
       
 
 ## **Technologies & Tools Used:**
 
 ### Tools:
-* PostgreSQL used to house the Sunshine list and Statistics Canada data
-* Tableau used to display Dashboard
+* pgAdmin 4 used to house the Sunshine list and Statistics Canada data
+* Tableau Public used to display Dashboard
 * Jupyter Notebook used for data extraction/transformation, data analysis and machine learning model
-* GitHub 
-* AWS used for hosting 
+* GitHub.io
+* Visual Studio Code Version: 1.60.0
+* AWS RDS instance used for hosting 
 * Quick Database Diagram used for ERD https://app.quickdatabasediagrams.com/#/
 
 ### Languages:
-* Python
-* SQL
+* Python 3.7.10, 
+* Conda *4.10.3*
+* PostgreSQL
 * JavaScript, HTML 
 
 ### Libraries:
 * pandas
-* Regular Expression RegEx
+* *Regular Expression RegEx*
 * Matplotlib 
 * random 
 * nltk
 * sklearn
-* Css 
+* Style.css 
 * Bootstrap
 
+
+### Resources:
+* see ETL process
 
 ### Algorithms:
 * to be updated in next segment
 
-
-##
 ## **Data Exploration Phase:**
 ### ETL Process 
 
@@ -142,7 +145,7 @@ CSV files from various sources were used create our database. Sources and links 
 
 The Sunshhine list is an annualizd publication of all Ontario public employees with salaraies >= $100,000. This list is a amalgamation of several sectors over a multitude of employers. Given the 25 year span of data and inconsistent approach to data entry of fields being reported on, the consolidated Sunshine List for years 1996 to 2020 requires significant cleansing on various fields for the benefit of clean dashboard visualizations. Detailed steps on data preprocessing for the purpose of analysis can be found in the Data Cleansing Procedure documentation.  
 
-[Link to Data Cleansing Procedure](https://github.com/DanielleSpring/Final-Project-SunshineList/blob/main/Data_Cleanings_Procedure.md)
+[Link to Data Cleansing Procedure](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Data_Cleanings_Procedure.md)
 
 #### 3) Load
 ##### **Database:**
@@ -248,7 +251,6 @@ preliminary notes
 - wages are still show gap
 
 ### $ Spent
-
 
 
 ## **Recommendations for Future Analysis/ Parking Lot items due to time and resource constraints:**
