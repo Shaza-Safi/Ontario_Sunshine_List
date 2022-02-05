@@ -54,7 +54,7 @@ Given the data available, can we use 25 years of data to determine whether the O
 
 ##  Pipeline Assembly Instructions
 
-*insert pipeline instruction.md *
+[Link to Pipeline Instructions](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle_new2/Pipeline_Instructions.md.ipynb)
 
 ### Locations of Project Deliverables:
 
@@ -68,12 +68,14 @@ Given the data available, can we use 25 years of data to determine whether the O
 | Machine Learning code and output | [Link to ML model](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Machine_Learning_Model_Gender_Prediction.ipynb) |
 
 ### Changes from Seg2 submission to Seg3 submission
-- Modified Machine Learning Model and added a Machine Learning Model process document
+- Modified Machine Learning Model
+- Added a Machine Learning Model process document
 - Added a Data Cleansing Procedure document
 - Tweaked Readme to remove all add references 
-- 
+- Added Pipeline Instructions document
+- Added Project Website files
+- Added AWS connections/documentation
       
-
 ## **Technologies & Tools Used:**
 
 ### Tools:
@@ -145,7 +147,7 @@ CSV files from various sources were used create our database. Sources and links 
 
 The Sunshhine list is an annualizd publication of all Ontario public employees with salaraies >= $100,000. This list is a amalgamation of several sectors over a multitude of employers. Given the 25 year span of data and inconsistent approach to data entry of fields being reported on, the consolidated Sunshine List for years 1996 to 2020 requires significant cleansing on various fields for the benefit of clean dashboard visualizations. Detailed steps on data preprocessing for the purpose of analysis can be found in the Data Cleansing Procedure documentation.  
 
-[Link to Data Cleansing Procedure](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Data_Cleanings_Procedure.md)
+[Link to Data Cleansing Procedure](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle_new2/Data_Cleanings_Procedure.md)
 
 #### 3) Load
 ##### **Database:**
@@ -154,7 +156,7 @@ For our database, we will be using both PostgreSQL, which will be hosted on AWS.
 ###### PostgreSQL Database
 The image below represents the tables of data that are uploaded onto the database in Postgres. The entity relational diagram allowed for easier joining of tables with SQL and was a helpful reference while importing data into the database.
 
-![ERD](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Revised_ERD_v3.png)
+![ERD](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle_new2/Images/ERD_Final.png)
 
 
 ## **Machine Learning: Gender Identification**
@@ -164,6 +166,8 @@ Machine learning tools will be used to predict gender for the list of names in t
 ### Machine Learning Hybrid Model Process Flow Diagram
 
 ![MachineLearningModel](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/ML%20images/ML_Model.png)
+
+[Link to Machine Learning Process](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle_new2/ML_Process.md)
 
 ### Preliminary Data Processing:
 The following steps were used in the preliminary data processing stage:

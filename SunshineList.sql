@@ -149,7 +149,88 @@ FROM sunshine_table
 WHERE year=2020;
 
 
--- STEP 6
+
+
+
+SELECT *
+FROM sunshine_table
+WHERE salary_paid IS NULL
+
+-- --Show the salary_paid in 5 equal width bins...need to download pgcharts project
+-- SELECT COUNT(salary_bin)
+-- FROM sunshine_table
+-- pd.crosstab(sunshine_table.salary_bin, 
+--             columns = 'Count').plot(kind = 'bar', 
+--                                      legend = False,
+--                                      title = 'Salary Paid')
+
+-- plt.show()
+
+
+--Review Salaries in sunshine table ALL YEARS
+SELECT *
+FROM sunshine_table
+ORDER BY salary_paid DESC
+LIMIT 10 
+
+
+--  2006 anomaly of $12 salary for Yelle-Weatherall_Joanne, Director Operations, Elisabeth-Bruyère Research Institute working for SCO Health Service
+SELECT *
+FROM sunshine_table
+WHERE last_first_name LIKE '%Yelle-Weatherall_Joanne%' 
+ORDER BY year ASC
+
+
+--STEP 6
+--Correct 2006 salary for Yelle-Weatherall_Joanne, Director Operations, Elisabeth-Bruyère Research Institute working for SCO Health Service
+--UPDATE salary_paid
+UPDATE sunshine_table 
+SET salary_paid='127455'
+WHERE last_first_name LIKE '%Yelle-Weatherall_Joanne%' AND year=2006
+
+
+-- STEP 7
+--UPDATE total compensation
+UPDATE sunshine_table 
+SET total_compensation= salary_paid + taxable_benefits
+WHERE last_first_name LIKE '%Yelle-Weatherall_Joanne%' AND year=2006
+
+--Verify correction
+SELECT *
+FROM sunshine_table
+WHERE last_first_name LIKE '%Yelle-Weatherall_Joanne%' 
+ORDER BY year ASC
+
+
+--  2006 anomaly of $12 salary for Harris_Stephen, Staff Inspector, for City of Toronto
+SELECT *
+FROM sunshine_table
+WHERE last_first_name LIKE '%Harris_Stephen%' 
+ORDER BY year ASC
+
+
+-- STEP 8
+--Correct 2006 salary for Harris_Stephen, Staff Inspector, for City of Toronto
+--UPDATE salary_paid
+UPDATE sunshine_table 
+SET salary_paid='128059'
+WHERE last_first_name LIKE '%Harris_Stephen%' AND year=2006
+
+
+-- STEP 9
+--UPDATE total compensation
+UPDATE sunshine_table 
+SET total_compensation= salary_paid + taxable_benefits
+WHERE last_first_name LIKE '%Harris_Stephen%' AND year=2006
+
+
+--Review that update worked
+SELECT *
+FROM sunshine_table
+WHERE last_first_name LIKE '%Harris_Stephen%' AND employer='City'
+ORDER BY year ASC
+
+-- STEP 10
 --Update Column for Salary Bins based on salary_paid using python Analysis file for bin sizes
 --Bins <105K, 105K-110K, 110K-130K, 130K-200K, 200K-500K, 500K-1M, >1M
 UPDATE sunshine_table
@@ -192,95 +273,31 @@ SELECT COUNT(INDEX)
 FROM sunshine_table
 -- WHERE year='2020'
 
-SELECT * FROM sunshine_table
 
+--*****************************
+--Create Male & Female counter column
+ALTER TABLE sunshine_table
+ADD Male_Count INT,
+ADD Female_Count INT;
+
+--Update Male_Count
+UPDATE sunshine_table 
+SET
+Male_Count = CASE WHEN gender='M' THEN 1 ELSE 0 END;
+
+--Update Female_Count
+UPDATE sunshine_table 
+SET
+Female_Count = CASE WHEN gender='F' THEN 1 ELSE 0 END;
+
+
+SELECT * FROM sunshine_table
 
 --reivew salary bins
 SELECT salary_bin, COUNT(salary_bin)
 FROM sunshine_table
 -- WHERE year=2020
 GROUP BY salary_bin
-
-
-
-SELECT *
-FROM sunshine_table
-WHERE salary_paid IS NULL
-
--- --Show the salary_paid in 5 equal width bins...need to download pgcharts project
--- SELECT COUNT(salary_bin)
--- FROM sunshine_table
--- pd.crosstab(sunshine_table.salary_bin, 
---             columns = 'Count').plot(kind = 'bar', 
---                                      legend = False,
---                                      title = 'Salary Paid')
-
--- plt.show()
-
-
---Review Salaries in sunshine table ALL YEARS
-SELECT *
-FROM sunshine_table
-ORDER BY salary_paid DESC
-LIMIT 10 
-
-
---  2006 anomaly of $12 salary for Yelle-Weatherall_Joanne, Director Operations, Elisabeth-Bruyère Research Institute working for SCO Health Service
-SELECT *
-FROM sunshine_table
-WHERE last_first_name LIKE '%Yelle-Weatherall_Joanne%' 
-ORDER BY year ASC
-
-
---STEP 7
---Correct 2006 salary for Yelle-Weatherall_Joanne, Director Operations, Elisabeth-Bruyère Research Institute working for SCO Health Service
---UPDATE salary_paid
-UPDATE sunshine_table 
-SET salary_paid='127455'
-WHERE last_first_name LIKE '%Yelle-Weatherall_Joanne%' AND year=2006
-
-
--- STEP 8
---UPDATE total compensation
-UPDATE sunshine_table 
-SET total_compensation= salary_paid + taxable_benefits
-WHERE last_first_name LIKE '%Yelle-Weatherall_Joanne%' AND year=2006
-
---Verify correction
-SELECT *
-FROM sunshine_table
-WHERE last_first_name LIKE '%Yelle-Weatherall_Joanne%' 
-ORDER BY year ASC
-
-
---  2006 anomaly of $12 salary for Harris_Stephen, Staff Inspector, for City of Toronto
-SELECT *
-FROM sunshine_table
-WHERE last_first_name LIKE '%Harris_Stephen%' 
-ORDER BY year ASC
-
-
--- STEP 9
---Correct 2006 salary for Harris_Stephen, Staff Inspector, for City of Toronto
---UPDATE salary_paid
-UPDATE sunshine_table 
-SET salary_paid='128059'
-WHERE last_first_name LIKE '%Harris_Stephen%' AND year=2006
-
-
--- STEP 10
---UPDATE total compensation
-UPDATE sunshine_table 
-SET total_compensation= salary_paid + taxable_benefits
-WHERE last_first_name LIKE '%Harris_Stephen%' AND year=2006
-
-
---Review that update worked
-SELECT *
-FROM sunshine_table
-WHERE last_first_name LIKE '%Harris_Stephen%' AND employer='City'
-ORDER BY year ASC
-
 
 --************************************************************************************************************
 --ANALYSIS
