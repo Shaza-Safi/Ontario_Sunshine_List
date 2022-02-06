@@ -66,7 +66,7 @@ Given the data available, can we use 25 years of data to determine whether the O
 | Database Integration-step 3  | [Link to Sunshine ipynb file](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/SunshineList_DataCleansing.ipynb) |
 | Data Analysis | [Link to Data Analysis ipynb](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Data_Analysis.ipynb) |
 | Machine Learning code and output | [Link to ML model](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Machine_Learning_Model_Gender_Prediction.ipynb) |
-| Dashboard | [Link to dashboard](https://public.tableau.com/views/Sunshine_Dashboard_Workbook/Gender_Dashboard?:language=en-US&:display_count=n&:origin=viz_share_link) |
+| Dashboard | [Link to dashboard](https://public.tableau.com/views/Sunshine_Dashboard_Workbook/TheThreshold?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link) |
 
 ### Changes from Seg2 submission to Seg3 submission
 - Modified Machine Learning Model
