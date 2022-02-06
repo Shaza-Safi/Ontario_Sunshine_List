@@ -131,7 +131,7 @@ A value counts query shows that there are 81 unique sectors in the current DataF
 
 The result of the cleansing provides a reduction of sectors from 81 to  8 unique sector categories.
 
-![Sector](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/Data%20Cleansing/Sectors.png)
+![Sector](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Data%20Cleansing/Sectors.png)
 
 
 #### Last Name Column
@@ -146,7 +146,7 @@ A value counts query shows that there are 8,666 unique sectors in the current Da
 
 The result of the cleansing provides a reduction of employers from 8,666 to  7,966 unique employer names.
 
-![BigBrother](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/Data%20Cleansing/BigBrother.png)
+![BigBrother](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Data%20Cleansing/BigBrother.png)
 
 #### City Column
 For the purpose of reviewing the Sunshine list and providing a visual on where in Ontario those positions making over $100,000 are situated, an attempt has been made to identify the city by using the Employer and Job Title information.  Cleansing actions performed are 100% manual and use the str.contains function to replace specific text with city names.
@@ -159,7 +159,7 @@ For the purpose of reviewing the Sunshine list and providing a visual on where i
 The following is a link to the city.csv file used to cleanse in step 4.
 *insert link to city.csv*
 
-[City List Link](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Resources/city.csv)
+[City List Link](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Resources/city.csv)
 
 
 #### Cleansed Job Title Column
@@ -260,7 +260,7 @@ The DataFrame is reviewed based on various character count columns and decisions
 
 *NOTE: there are additional funny hidden characters in records, example index 1764: where the final first name is "skip"   This is dealt with in our SQL database process.*
 
-![SkipExample](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/Data%20Cleansing/Skip.png)
+![SkipExample](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Data%20Cleansing/Skip.png)
 
 The Sunshine_data_df now contains 1,662,195 records. This represents 99.1% of the intial 1,676,558 records prior to data cleansing.
 
@@ -272,7 +272,7 @@ For data analysis purposes a unique last, first name column is created in an eff
 ## Creating Unique First Names for Machine Learning Model
 The machine learning model will use a unique list of first names from the Sunhine list to predict a gender.  A final review of the data shows some funnies due to hidden characters.  These names will be deleted using the noted index number.
 
-![FirstNameML](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/Data%20Cleansing/first_names_ML.png)
+![FirstNameML](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Data%20Cleansing/first_names_ML.png)
 
 The model will be fed 28,774 unique first names.
 
@@ -301,7 +301,7 @@ Data requiring further cleansing are as follows:
 ### Step 1 Update Gender Column Values
 The update query to populate the gender in the sunshine_table from the machine learning model resulted in 42 records with no gender. These funny data records appear to continue to have hidden characters.  For our purposes, these records are deleted.
 
-![SQLFunnies](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/SQL%20Cleansing/SQL_funnies.png)
+![SQLFunnies](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/SQL%20Cleansing/SQL_funnies.png)
 
 ### Step 2 Update City Column Values for Specific Employers
 A review of the city column highlights that 429,019 records have no city identified.  Of the records not identified a high portion belong to Hydro One, Ontario Power Generation and OPP.  Given that analysis has shown that some of the highest earners from the sunshine list belong to the Hydro/OPG, it is best not to delete these records.  These records will be updated with the city for their perspective headquarters.
@@ -310,22 +310,22 @@ A review of the city column highlights that 429,019 records have no city identif
     Ontario Power Generation is assigned to Clarington
     OPP is assigned to Orillia
 
-![NoCity](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/SQL%20Cleansing/NoCity.png)
+![NoCity](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/SQL%20Cleansing/NoCity.png)
     
 ### Step 3 Review Salary Paid Data Funnies
 A review of maximum salaries highlighted that in 2006 two individuals were paid an annual salary of > $12 million.  A closer look was taken to review the individuals in question: Joanne Yelle Weatherall and Stephen Harris. Historical salaries were reviewed for both employees. It is clear from the data that these salaries are finger fumbles where the decimal was misplaced.  An Update query is used to correct the gross inflattion of these salary records.
 
-![12Million](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/SQL%20Cleansing/TwelveMillionSalary.png)
+![12Million](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/SQL%20Cleansing/TwelveMillionSalary.png)
 
 Cleansing Joanne Yelle Weatherall
 ![Joanne](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/SQL%20Cleansing/Joanne_YelleWeatherall.png)
 
 Cleansing Stephen Harris
-![Stephen](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/SQL%20Cleansing/Stephen_Harris.png)
+![Stephen](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/SQL%20Cleansing/Stephen_Harris.png)
 
 Both records are updated manually
 
-![SalaryCleansing](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/SQL%20Cleansing/SalaryCorrection.png)
+![SalaryCleansing](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/SQL%20Cleansing/SalaryCorrection.png)
 
 
 
