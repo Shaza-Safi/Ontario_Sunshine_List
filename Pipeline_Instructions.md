@@ -60,3 +60,7 @@ The files are:
  
  5) Publish Dashboard to Tableau Public under Sunshine_Dashboard_Workbook.twb
 
+# Step 6 - Open Dashboard
+
+The database is static. So there is no need to refresh the data model in Tableau to use the Dashboard. Should additional data be added, such as a new published Sunshine list, simply amend the cleansing file to incorporate the new year and run it through the remaining steps
+
