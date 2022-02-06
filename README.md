@@ -54,7 +54,7 @@ Given the data available, can we use 25 years of data to determine whether the O
 
 ##  Pipeline Assembly Instructions
 
-[Link to Pipeline Instructions](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle_new2/Pipeline_Instructions.md.ipynb)
+[Link to Pipeline Instructions](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Pipeline_Instructions.md)
 
 ### Locations of Project Deliverables:
 
