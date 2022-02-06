@@ -219,7 +219,7 @@ The data is first passed through a relative name frequency-conditional probabili
 #### Benefits
 The use of a hybrid model (Relative frequency classifier and Natural Language Toolkit (NLTK)) ensures that all first names have a gender prediction. 
 
-#### Model Change Explainations:
+#### Model Change Explanations:
 Initially only the NLTK was used to identify gender with accuracy level of 76.1%.  As an attemp to increase the accurancy of the model we introduced a secondary model Relative Frequency Classifier which increased the accuracy to 78.7%. 
 
 ## **Dashboard:**
