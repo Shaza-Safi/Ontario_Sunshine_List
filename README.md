@@ -74,7 +74,7 @@ Given the data available, can we use 25 years of data to determine whether the O
 - Tweaked Readme to remove all add references 
 - Added Pipeline Instructions document
 - Added Project Website files
-- Added AWS connections/documentation
+- Removing AWS hosting from projects scope
       
 ## **Technologies & Tools Used:**
 
@@ -84,7 +84,6 @@ Given the data available, can we use 25 years of data to determine whether the O
 * Jupyter Notebook used for data extraction/transformation, data analysis and machine learning model
 * GitHub.io
 * Visual Studio Code Version: 1.60.0
-* AWS RDS instance used for hosting 
 * Quick Database Diagram used for ERD https://app.quickdatabasediagrams.com/#/
 
 ### Languages:
@@ -151,12 +150,12 @@ The Sunshhine list is an annualizd publication of all Ontario public employees w
 
 #### 3) Load
 ##### **Database:**
-For our database, we will be using both PostgreSQL, which will be hosted on AWS. This enables anyone with the access codes to work the project data. 
+For our database, we will be using both PostgreSQL. 
 
 ###### PostgreSQL Database
 The image below represents the tables of data that are uploaded onto the database in Postgres. The entity relational diagram allowed for easier joining of tables with SQL and was a helpful reference while importing data into the database.
 
-![ERD](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle_new2/Images/ERD_Final.png)
+![ERD](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/ERD_Final.png)
 
 
 ## **Machine Learning: Gender Identification**
@@ -223,29 +222,15 @@ The use of a hybrid model (Relative frequency classifier and Natural Language To
 Initially only the NLTK was used to identify gender with accuracy level of 76.1%.  As an attemp to increase the accurancy of the model we introduced a secondary model Relative Frequency Classifier which increased the accuracy to 78.7%. 
 
 ## **Dashboard:**
-We will use Tableau to create our Dashboard, which will be hosted on AWS. For the purpose of segment 2 submission, we will have our draft Dashboard data model built using CSV file exports from our SQL database.  Below is a preliminary blueprint of what the dashboard will look like.
+We will use Tableau Public to create our Dashboard. We will have our Dashboard data model built using CSV file exports from our SQL database as the free public tableau can only connect to local data sources and has restricted  connectivity to AWS.
 
-*insert updated snapshot of dashboard*
+Below is a prilimanary blueprint of our dashboard will look like.
 
 [The link to our Preliminary tableau dashboard](https://public.tableau.com/views/Sunshine_Dashboard_Workbook/Gender_Dashboard?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 Interactive elements which will be incorporated into the Dashboard are:
 - interactive filters
 - highlighting
-
-
-Pending data analysis, some preliminary thoughts on how our dashboard will be presented are listed below: 
-
-- Summary Analysis - Top Earners, Top positions, 
-
-- Salary trending (line chart $ by Years)
-  - Ontario Sunshine list (public sector), with avg public/private sectors(Stats Can data)
-  - filter ability based on age, gender
-
-- Salary trending (bubble chart layered onto map of Ontario)
-
-- Gender Gap, Roles, Trends
-
 
 ### **Data Analysis Phase:**
 Data analysis is being done by all team members separately to uncover trends and insights.  The team will regroup to review insights gathered, determine and develop storyboard for presentation.  As the data is being explored, additional data cleansing may be required for the purpose of visualizations.
@@ -264,12 +249,12 @@ preliminary notes
 ## **Recommendations for Future Analysis/ Parking Lot items due to time and resource constraints:**
 - Predict age for everyone on the sunshine list using machine learning techniques.
 - Conduct a sentimental analysis on twitter feeds using machine learning to identify relavence of the sunshine list and having a positive or negative impact.
-- Webscrapping to the sunshine list website in order to have the updated list every year.
-- consolidate the First Names, Gender tables into 1 and have the Machine Learning Model update the table, rather than reading one Names Table to create a secondary Names Table with gender, that is then used to update the Sunshine Table records.
+- Webscrapping the sunshine list website in order to have the updated list every year.
+- Consolidate the First Names, Gender tables into 1 and have the Machine Learning Model update the table, rather than reading one Names Table to create a secondary Names Table with gender, that is then used to update the Sunshine Table records.
 
 ## **Issues Encountered:**
-- GitHub size constrainsts 
-- We chose to only use relationships between the Statistics Canada and Sunshine datasets, as unions would have cause record duplications, limiting us on how we could display some of the data
+- GitHub large files size constrainsts.
+- We chose to only use relationships between the Statistics Canada and Sunshine datasets, as unions would have cause record duplications, limiting us on how we could display some of the data on the dashboard.
 - Sunshine dataset very messy and requires exhaustive cleansing:
       - on job titles require more standardization
       - employer names require more standardization/clean up
