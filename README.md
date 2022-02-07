@@ -35,11 +35,10 @@ We chose this topic for the following reasons:
 Given the data available, can we use 25 years of data to determine whether the Ontario Sunshine list is still relevant? 
 
 - Can we identify gender using first name? 
-- How do civil servant salaries trend against Ontario private sector?
 - Is there Gender Inequality in Ontario’s Sunshine list?  
 - Does gender play a factor? Is region a factor?
 - Are civil servant salaries keeping up with inflation?
-- How do civil servant salaries trend against Ontario private sector?
+- How do civil servant salaries trend against Ontario wages?
 - Can raises, salary increases be track? Are they in proportion with inflation? who is getting raises? 
 - When creating ranges for salaries which sectors are highest in pay and which are lowest?
 - Which job titles are paid higher salary/lowest? 
