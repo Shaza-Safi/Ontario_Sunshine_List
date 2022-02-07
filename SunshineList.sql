@@ -319,6 +319,23 @@ WHERE
   )
 )
 
+--TOP 5 overall highest paid salaries in 2020
+SELECT *
+FROM sunshine_table
+WHERE 
+(
+  salary_paid IN 
+  (
+    SELECT salary_paid
+    FROM sunshine_table as table1
+	WHERE year = 2020
+    GROUP BY year, salary_paid
+    ORDER BY salary_paid DESC
+	LIMIT 5
+	  
+  )
+)
+
 --List of individuals over 25 that have earned over $1 million annually with count
 SELECT last_first_name, COUNT(*) AS "Number of Highest Earners", MAX(salary_paid) AS "Max Salary"
 FROM sunshine_table
@@ -327,6 +344,16 @@ GROUP BY last_first_name
 ORDER BY(COUNT(*)) DESC;
 
 
+--COUNT OF EMPlOYEES in 2020 if threshold was 157000
+SELECT sector,COUNT(*) 
+FROM sunshine_table
+WHERE year = 2020 AND salary_paid >= 157000
+GROUP BY sector;
 
--- --Total record count
--- SELECT COUNT(*) FROM sunshine_table
+
+--Display Job_title with count and salary greater than 500,000
+SELECT job_title,COUNT(*) 
+FROM sunshine_table
+WHERE year = 2020 and salary_paid >=500000
+GROUP BY job_title
+ORDER BY COUNT(*)DESC;
