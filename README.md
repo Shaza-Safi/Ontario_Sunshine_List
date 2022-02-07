@@ -1,4 +1,4 @@
-# **Sunshine List:**  Can it be used to evaluate fairness in the Ontario workforce?
+# **Sunshine List:**  Is the Sunshine List still revelant for the Ontario Taxpayers??
 University of Toronto Data Analytics Bootcamp Final Project
 
 ## [Link to final project webpage](https://shaza-safi.github.io/Final-Project-Website/)
