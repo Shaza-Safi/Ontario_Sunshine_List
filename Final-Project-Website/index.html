@@ -57,8 +57,9 @@
           <li><a href="Data_Analysis.html">Analysis</a></li>
           <li class="menu-has-children"><a href="#machinelearning">Machine Learning</a>
             <ul>
-              <li><a href="#ml">Description</a></li>
-              <li><a href="Data_Bootcamp_Capstone_Project_Machine_Learning_Model.html">Code</a></li>
+              <li><a href="#ML_diagram">ML Diagram</a></li>
+              <li><a href="ML_Process.md">Description</a></li>
+              <li><a href="Machine_Learning_Model_Gender_Prediction.html">Code</a></li>
             </ul>
           </li>
           <li><a href="#dashboard">Dashboard</a></li>
@@ -81,7 +82,7 @@
             <div class="carousel-container">
               <div class="carousel-content">
 				<p>&nbsp;</p>
-                <h2>Can the Ontario Sunshine List be used to evaluate fairness in the Ontario workforce?</h2>
+                <h2>Is the Sunshine List still relevant for the Ontarian tax payers?</h2>
                 <!--p>Can it be used to evaluate fairness in the Ontario workforce?Data Analytics Bootcamp Uft2021.</p-->
 				<p>&nbsp;</p>
 
@@ -135,7 +136,7 @@
           <h3>Overview</h3>
           <p>The Sunshine list is annual list includes public sector employees in Ontario who earned over $100,000 last year. The list is mandated by the Public Sector Salary Disclosure Act enacted by the Ontario government under Premier Mike Harris, with the first list released in 1996.</p>
           <h3>Objective</h3>
-          <p>By analyzing public sector incomes for those employees who earned over $100,000 annually, we seek to determine if the yearly publication can be used to evaluate fairness in the Ontario workforce. In our analysis we will be using the data to determine trends based on salaries, gender and potentially age and regions (urban vs rural). The sunshine list does not denote gender, age or location therefore we will use machine learning tools to predict gender/age and data cleansing teachniques to identify location.</p>
+          <p>By analyzing public sector incomes for those employees who earned over $100,000 annually, we seek to determine if the yearly publication can be used to evaluate fairness in the Ontario workforce. In our analysis we will be using the data to determine trends based on salaries and gender. The sunshine list does not denote gender therefore we will use machine learning tools to predict gender.</p>
 	   </header>
 
 	   <div class="row">
@@ -232,19 +233,22 @@
       Machine Learning Section
     ============================--> 
 
-  <section id="ml">
+  <section id="ML_diagram">
       <div class="container">
 
         <header class="section-header wow fadeInUp">
-          <h3>Machine Learning Objective</h3>
-          <header class="section-header wow fadeInUp">
+          <h3>Machine Learning Diagram</h3>
+          <div class="dataset-img col">
+            <img src="img/ML_Model.png" alt="" class="img-fluid">
+          </div>  
+          <!-- <header class="section-header wow fadeInUp">
             <p>Machine learning tools will be used to predict gender for the list of names in the sunshine list. This process is essential for the analysis and outputs/recommendations.</p>
        </header>
        <h3>Overview of types of machine learning used</h3>
           <header class="section-header wow fadeInUp">
             <p>Our model has used two types of machine learning: Relative frequency classifier and Natural Language Toolkit (NLTK), a Python library that used supervised classification to determine a gender class (output) for each input (given name)</p>
        </header>
-        </header>
+        </header> -->
     </section><!-- #ml -->
 
  <!--==========================
@@ -255,7 +259,8 @@
 
         <header class="section-header wow fadeInUp">
           <h3>This is our awesome dashboard using tableau!</h3>
-          <div class='tableauPlaceholder' id='viz1643567063138' style='position: relative'><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Sunshine_Dashboard_Workbook&#47;Gender_Dashboard' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1643567063138');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.minHeight='750px';vizElement.style.maxHeight=(divElement.offsetWidth*1.77)+'px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+          <div class='tableauPlaceholder' id='viz1644209223801' style='position: relative'><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Sunshine_Dashboard_Workbook&#47;TheThreshold' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1644209223801');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='927px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+          <!-- <div class='tableauPlaceholder' id='viz1643567063138' style='position: relative'><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Sunshine_Dashboard_Workbook&#47;Gender_Dashboard' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1643567063138');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.minHeight='750px';vizElement.style.maxHeight=(divElement.offsetWidth*1.77)+'px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script> -->
         </header>
     </section><!-- #dashboard -->
 
