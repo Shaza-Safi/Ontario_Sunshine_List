@@ -16,7 +16,7 @@ University of Toronto Data Analytics Bootcamp Final Project
 
 NOTE: While members are assigned specific roles, we all work together on each part of the project.
 
-## **Selected Topic : Can it be used to evaluate fairness in the Ontario workforce?**
+## **Selected Topic : Is the Sunshine List still revelant for the Ontario Taxpayers?**
 
 ### Overview:
 The Sunshine list is annual list includes public sector employees in Ontario who earned over $100,000 last year. The list is mandated by the Public Sector Salary Disclosure Act enacted by the Ontario government under Premier Mike Harris, with the first list released in 1996.
