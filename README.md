@@ -166,60 +166,9 @@ Machine learning tools will be used to predict gender for the list of names in t
 
 ![MachineLearningModel](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/ML%20images/ML_Model.png)
 
+Please refer to the Machine Learning Process document for details on the gender prediction model.
+
 [Link to Machine Learning Process](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/ML_Process.md)
-
-### Preliminary Data Processing:
-The following steps were used in the preliminary data processing stage:
-- Downloaded US Social Security name-gender-frequency data onto local machine (1 file per year from 1880-2020)
-- Loop through each file in Jupyter Notebook to read each file into PD Data Frame using OS
-- Use functools library function ‘reduce’ and pass it a lambda function that appends each individual DF into one large DF
-- A groupby method was performed on the large DFs ‘first_name’ and ‘gender’ columns and the frequencies were summed, resulting in only the unique name-gender instances remaining in the DF
-- Split the large DF into two separate DFs one for all of the multi-gender first names and one for all non multi-gender first names
-- Used pivot function on each DF to remove the ‘gender’ column and replace it with two new columns ‘F’ and ‘M’
-- Append these two DFs
-- Preliminary processing for the NLTK Naive Bayes Classifier involved using the same US Social Security data but a function was defined and used to slice the first names into only the last 3 letters of the first names which were then used
-- Last letter and last two letters were also tried but ultimately the last 3 letters of each first name were selected due to a resulting higher model accuracy
-
-### Preliminary Feature Engineering/Selection and Decision-Making Process:
-The only feature considered was the first names from the sunshine list due to plausibility (relevance to predicting gender)
-
-### Splitting Data Into Testing & Training sets:
-
-#### Inital Testing:
-Initial testing was done using NLTK library Male and Female name list  
-A labelled class list is created using the following code:
-
-![labels](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/ML%20images/labels.png)
-
-The above list is randomly shuffled and the resulting list is divided into a training and testing set. Note default percentage breakdown between training and testing has been used. 
-
-From there, we instantiate a naive Bayes classification model (classifier) and train it with the training set 
-
-Lastly, a basic accuracy score is generated for evaluating the model.
-
-![Accuracy_InitialModel](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/ML%20images/Accuracy_InitialModel.png)
-
-#### Improved Testing and Training:
-
-- Splitting US Social Security Name data into a training/testing set to test accuracy of model using just the training data (US Social Security Name Data) before passing Sunshine List unique first names data to model.  
-- A testing size of 0.2 and 0.3 were tried using sklearn’s train test split method
-- 0.3 was selected as it resulted in a higher accuracy score
-- Some other train:test size ratios were tried that were <0.2 but were not selected due to their high accuracy results likely being due to overfitting
-
-A hybrid model is then created which improved the accuracy.
-![hybrid_accuracy](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/ML%20images/hybrid_accuracy.PNG)
-
-###  Model Choice
-Our model has used two types of machine learning: Relative frequency classifier and Natural Language Toolkit (NLTK), a Python library that used supervised classification to determine a gender class (output) for each input (given name).   This resulted in a hybrid model.
-
-#### Limitations
-The data is first passed through a relative name frequency-conditional probability model.  A function takes the name-gender-frequency data and performs simple conditional probability to output a gender prediction.  The model is limited.  If the model cannot find the name in its dataset (US Social Security name data), no prediction output will be given for said name.  For this reason, only names with no gender prediction are fed into the heuristic Naive Bayes Classification model.
-
-#### Benefits
-The use of a hybrid model (Relative frequency classifier and Natural Language Toolkit (NLTK)) ensures that all first names have a gender prediction. 
-
-#### Model Change Explanations:
-Initially only the NLTK was used to identify gender with accuracy level of 76.1%.  As an attemp to increase the accurancy of the model we introduced a secondary model Relative Frequency Classifier which increased the accuracy to 78.7%. 
 
 ## **Dashboard:**
 We will use Tableau Public to create our Dashboard. We will have our Dashboard data model built using CSV file exports from our SQL database as the free public tableau can only connect to local data sources and has restricted  connectivity to AWS.
@@ -238,12 +187,10 @@ Data analysis is being done by all team members separately to uncover trends and
 
 ## **Analysis Results:**
 
-preliminary notes
-### Gender Gap:
-- the number of women employed has now equalized with men in 2020....from 30ish% in 1996 to 50% in 2020
-- wages are still show gap
 
-### $ Spent
+
+
+
 
 
 ## **Recommendations for Future Analysis/ Parking Lot items due to time and resource constraints:**
@@ -271,6 +218,12 @@ preliminary notes
 Geeks for Geeks article ["Python Gender Identification by Name using NLTK"](https://www.geeksforgeeks.org/python-gender-identification-by-name-using-nltk/)
 
 Andrew DAngelo's thesis paper ["Analyzing the Gender Wage-gap in Ontario’s Public Sector"](https://atrium.lib.uoguelph.ca/xmlui/handle/10214/9653?show=full)
+
+Towards Data Science [Naive-bayes-explained](https://towardsdatascience.com/naive-bayes-explained-9d2b96f4a9c0)
+
+ Christophm Github [Github](https://christophm.github.io/interpretable-ml-book/interaction.html)
+ 
+ StackOverflow [StackOverflow](https://stackoverflow.com/questions/43288550/iopub-data-rate-exceeded-in-jupyter-notebook-when-viewing-image)
 
 ### Consolidated SunShine List (raw data)
 
