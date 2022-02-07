@@ -186,12 +186,68 @@ Data analysis is being done by all team members separately to uncover trends and
 
 
 ## **Analysis Results:**
+The Ontario government publishes a listing of public sector employees who earn $100,000 or more annually.  The list was established in 1996 and has been published annually on March 31st. The purpose of the list is to provide accountability and transparency, requiring organizations that receive public funds to disclose the names, positions, salaries and total taxable benefits of each sunshine list employee for the given calendar year.  In our analysis we will also attempt to predict a gender for each employee and identify the employee city location.
 
+The main audience of the sunshine list are Ontario taxpayers.  This year will mark 25 years of the sunshine list publication. The question to answer is can Ontario taxpayers use the sunshine list in a meaningful way to seek insights as to how their tax dollars are being spent.  By analyzing the sunshine list, we seek to answer several questions.
 
+At a top line, you can quickly see that the sunshine list has growth exponentially since its initial publication.  In 1996 the list published 3,582 employee names with salary details. In 2020 the list contained 205,078 employees. This represents 5625% increase, yet the average salary paid to a public employee remains steady at approximately $127,000.  
+ 
+![EmployeeCount](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/EmployeeCount.PNG)
+ 
+This raises the question as to why the list is growing.  The $100,000 threshold has remained unchanged since 1996.  Is the threshold still a valid metric for Ontarians? To answer this, we look to the Consumer Price Index (CPI) which measures the average change in prices over time that consumers pay for a basket of goods and services. Below depicts The CPI for Ontario since 1996 as compared to the average salary paid on the Sunshine List.  The graph clearly depicts that the CPI has growth year over year for the last 24 years.  In 1996 our basket cost $88. This same basket has now risen to $138 equating to a 57% increase. 
 
+![CPI](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/CPI.png)
+ 
+Should Ontarians be concerned about the exponential growth of the employee count in 24 years with no change to the threshold metric? The list contains the salary paid and taxable benefits for each employee. For the purpose of our analysis, we will take a close look at the salaries.  In order to visual salary bands, the salary paid has been grouped into 6 bin sizes.    In the below chart, the bubble size represents the employee count for the 6 salary bins for the last 24 years.  It is very apparent that the bulk of all salaries paid are $200,000 or less, with the biggest grouping residing in the $110 to $129 bin size. What the eye is not drawn to are the smaller bubbles. In fact, the largest of the bin sizes (navy blue) representing those salaries $1 million or greater, is barely distinguishable on the chart. Should these salaries be seen as outliers?  Or should these salaries be highlighted to ensure transparency and accountability of tax payer dollars.  The drastic growth of the list now allows for the highest earners on the list to hide amongst the masses.
 
+![SalaryBins](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/SalaryBins.PNG)
+ 
+Where the threshold to be increased to match the CPI growth, assuming a $157,000 threshold the list would reduce dramatically from 205K to a little over 24K (-834%).  
 
+![NewThreshold](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/Threshold157K.PNG)
+ 
+This leads us to answer who is on the list? In order to truly gain insight into what job titles are making the list.  A count on job titles reveals that there are 179,380 unique job titles in the dataset. In order to drive any quantifiable insight, the job title column requires data cleansing. For the purpose of our analysis, we were able to standardized job titles and reduce the number of unique jobs to 5,097.  Further cleansing would be needed to have an accurate picture of the top roles on the sunshine list.  Focusing on 2020 our cleansed data shows that it is educators, managers, nurses and police topping off the list.
 
+![JobTitle](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/Job_Titles.PNG)
+ 
+As opposed to the highest earners in the same year, being CEO/CFO, Physicians and Department Heads.
+
+![JobTitleBig](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/JobsGreaterThan500K.png)
+ 
+As the job title data is still very dirty, we will use the sector data which has been cleansed to only 8 categories. Reviewing the data for highest earners, we can see that the Hydro/OPG sector leads in terms of highest salary paid.  This is $846,430 more than that of the highest earner in the school’s sector.   It is also interesting to note that Hydro/OPG has the lowest employee count, with the lowest percentage of women. Women represent 22% of the Hydro/OPG employees on sunshine list.  
+
+![MaxSalaryTreeMap](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/MaxSalarySector.png)
+ 
+Who are the top earners on the sunshine list?  How many of these top roles belong to women?  Are certain sectors more generous than others?  To answer these questions, we look to the top 5 individuals of each sector.
+
+![Top5](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/Top5PerSector2020.PNG)
+ 
+6 of the 10 highest earners from the sunshine list are employed by Hydro/OPG.  In addition, the bar graph clearly shows a trend that the highest earning positions in Ontario’s public sector are held by men with blue dominating the top of the graph and pink heavy on the bottom.  The second ranked salary is currently identified as female. This is actually an incorrect gender identification of Dominque.  Dominique Miniere is a man as confirmed by LinkedIn, which means that the top 14 highest salary positions are all held men.
+ 
+ ![LinkedIn](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/Dominque_Min_hydro.PNG)
+ 
+*NOTE:  Dominique Miniere is a man. Privacy laws in Canada required us to rely on US Census Bureau data to train our gender identification model. We surmise that using Canadian centric which would incorporate French names and would likely not result in a wrong gender identification.  For more information on how we performed gender identification, please refer to the machine learning documentation.*
+
+[Link to Machine Learning Model Process](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/ML_Process.md)
+
+From the top earning position, it would appear we do have a gender wage gap in Ontario’s public sector.  When we look at our salary bins by gender, we can see a pyramid with the highest paid at the top and the $110K to $129K bin at the base.  Men dominate the higher paying salary bins, whereas the count of women in the lower salary bins is growing.
+ 
+![GenderSalaryBins](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/SalaryBin_Gender.PNG)
+
+While a wage gap is evident, it does appear that there is now after 24 years an equal number of women represented on the sunshine list as there are men.  
+
+![Donuts](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/DonutCharts.PNG)
+![AvgSalaryOverTime](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/AvgSalary_OverTime.PNG)
+
+What is difficult to tease out of the sunshine list is the ability to track top-earning positions.  Have generous raises been enjoyed while potentially lower seniority roles endured wages freezes and/or cutbacks.  The reason for this is the lack of unique employee identifier provided, as well as the magnitude of the dirty data. 
+
+The Sunshine list is an amalgamation of various agencies public salary reporting.  There does not appear to be a standard for such reporting criteria.  No standardization for data in columns such as job titles/roles, names, employers or datatypes.  List column headers name tend to change from year to year.  In addition, there does not appear to be any validation of the data being published as seen in 2006 with 2 employees having salaries noted as exceeding $12 million.  Additional effort would still be required to cleanse the job title, employer and last name columns.  This would allow for traceability of these individuals over the 24 years of data.  More details can be found in our data cleansing procedure.  
+
+[Link to Data Cleansing Procedure](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Data_Cleanings_Procedure.md)
+
+In conclusion, our analysis does demonstrate that the Ontario taxpayers can use the sunshine list in a meaningful way to seek insights in terms of the gender gap.  The data shows that the average salary of those on the list has remained constant and the bulk of these individuals reside in the lower salary bins.  Given the excessive growth of the list, the threshold metric is clearly out of date.  We see nurses, police officers, bus drivers all on the list. This is not due to generous bonus, but likely significant hours of overtime.  The underlying purpose of the published list is to provide transparency to public spend.   The employee growth to the list acts to mask high earners, as these datapoints tend to hide amongst weeds so to say.  
+
+It would be our recommendation that the threshold metric be re-examined. At min it should reflect today’s cost of living.  $100,000 in 1996 does not have the same value in 2020.  In addition, a unique employee identified should be included in the publication.
 
 ## **Recommendations for Future Analysis/ Parking Lot items due to time and resource constraints:**
 - Predict age for everyone on the sunshine list using machine learning techniques.
