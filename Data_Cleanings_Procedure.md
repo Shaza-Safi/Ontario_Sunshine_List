@@ -236,7 +236,7 @@ All names will need to have case sensitivity corrected to first letter Capitaliz
 
 6) Using conditions based on the clean_char_count and final_first_name columns update the final_first_name column
 
-![FinalFirstName](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/Data%20Cleansing/Final_First_Name.png)
+![FinalFirstName](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Data%20Cleansing/Final_First_Name.png)
 
 7) Create a new column called final_char_count (calculated a character count on the final_first_name column)
 
@@ -318,7 +318,7 @@ A review of maximum salaries highlighted that in 2006 two individuals were paid 
 ![12Million](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/SQL%20Cleansing/TwelveMillionSalary.png)
 
 Cleansing Joanne Yelle Weatherall
-![Joanne](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/Danielle/Images/SQL%20Cleansing/Joanne_YelleWeatherall.png)
+![Joanne](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/SQL%20Cleansing/Joanne_YelleWeatherall.png)
 
 Cleansing Stephen Harris
 ![Stephen](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/SQL%20Cleansing/Stephen_Harris.png)
