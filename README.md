@@ -170,6 +170,10 @@ Please refer to the Machine Learning Process document for details on the gender 
 
 [Link to Machine Learning Process](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/ML_Process.md)
 
+#### Model Evaluation Process
+
+[Link to ML_Model_Evaluation](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/ML_Model_Evaluation.ipynb)
+
 ## **Dashboard:**
 We will use Tableau Public to create our Dashboard. We will have our Dashboard data model built using CSV file exports from our SQL database as the free public tableau can only connect to local data sources and has restricted  connectivity to AWS.
 
