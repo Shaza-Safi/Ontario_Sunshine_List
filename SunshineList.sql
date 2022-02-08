@@ -350,6 +350,19 @@ FROM sunshine_table
 WHERE year = 2020 AND salary_paid >= 157000
 GROUP BY sector;
 
+--Job Titles  in 2020 if threshold was 157000
+SELECT job_title,COUNT(*) 
+FROM sunshine_table
+WHERE year = 2020 AND salary_paid >= 157000
+GROUP BY job_title
+ORDER BY COUNT(*)DESC LIMIT(10);
+
+--Job Titles  in 2020
+SELECT job_title,COUNT(*) 
+FROM sunshine_table
+WHERE year = 2020
+GROUP BY job_title
+ORDER BY COUNT(*)DESC LIMIT(10);
 
 --Display Job_title with count and salary greater than 500,000
 SELECT job_title,COUNT(*) 
