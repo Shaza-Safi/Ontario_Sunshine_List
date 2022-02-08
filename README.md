@@ -199,19 +199,19 @@ At a top line, you can quickly see that the sunshine list has growth exponential
  
 ![EmployeeCount](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/EmployeeCount.PNG)
  
-This raises the question as to why the list is growing.  The $100,000 threshold has remained unchanged since 1996.  Is the threshold still a valid metric for Ontarians? To answer this, we look to the Consumer Price Index (CPI) which measures the average change in prices over time that consumers pay for a basket of goods and services. Below depicts The CPI for Ontario since 1996 as compared to the average salary paid on the Sunshine List.  The graph clearly depicts that the CPI has growth year over year for the last 24 years.  In 1996 our basket cost $88. This same basket has now risen to $138 equating to a 57% increase. 
+This raises the question as to why the list is growing.  The $100,000 threshold has remained unchanged since 1996.  Is the threshold still a valid metric for Ontarians? To answer this, we look to the Consumer Price Index (CPI) which measures the average change in prices over time that consumers pay for a basket of goods and services. Below depicts The CPI for Ontario since 1996 as compared to the average salary paid on the Sunshine List.  The graph clearly depicts that the CPI has grown year over year for the last 24 years.  In 1996 our basket cost $88. This same basket has now risen to $138 equating to a 57% increase. 
 
 ![CPI](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/CPI.png)
  
-Should Ontarians be concerned about the exponential growth of the employee count in 24 years with no change to the threshold metric? The list contains the salary paid and taxable benefits for each employee. For the purpose of our analysis, we will take a close look at the salaries.  In order to visual salary bands, the salary paid has been grouped into 6 bin sizes.    In the below chart, the bubble size represents the employee count for the 6 salary bins for the last 24 years.  It is very apparent that the bulk of all salaries paid are $200,000 or less, with the biggest grouping residing in the $110 to $129 bin size. What the eye is not drawn to are the smaller bubbles. In fact, the largest of the bin sizes (navy blue) representing those salaries $1 million or greater, is barely distinguishable on the chart. Should these salaries be seen as outliers?  Or should these salaries be highlighted to ensure transparency and accountability of tax payer dollars.  The drastic growth of the list now allows for the highest earners on the list to hide amongst the masses.
+Should Ontarians be concerned about the exponential growth of the employee count, as the threshold metric hsa not changed in 24 years? To answer this question, we look to the list which contains the salary paid and taxable benefits for each employee. For the purpose of our analysis, we will focus on the salaries.  In order to visual salary bands, the salary paid has been grouped into 6 bin sizes.    In the below chart, the bubble size represents the employee count for the 6 salary bins for the last 24 years.  It is very apparent that the bulk of all salaries paid are $200,000 or less, with the biggest grouping residing in the $110 to $129 bin size. What the eye is not drawn to are the smaller bubbles. In fact, the largest of the bin sizes (navy blue) representing those salaries $1 million or greater, is barely distinguishable on the chart. Should these salaries be seen as outliers?  Or should these salaries be highlighted to ensure transparency and accountability of tax payer dollars.  The drastic growth of the list now allows for the highest earners on the list to hide amongst the masses.
 
 ![SalaryBins](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/SalaryBins.PNG)
  
-Where the threshold to be increased to match the CPI growth, assuming a $157,000 threshold the list would reduce dramatically from 205K to a little over 24K (-834%).  
+However, were we to increase the threshold to match the growth of the Ontario CPI during the last 24 years, we could assume a revised threshold of $157,000.  Below graphs clearly shows a drastic reduction fo the list from 205K to a little over 24K (-834%).  
 
 ![NewThreshold](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/Threshold157K.PNG)
  
-This leads us to answer who is on the list? In order to truly gain insight into what job titles are making the list.  A count on job titles reveals that there are 179,380 unique job titles in the dataset. In order to drive any quantifiable insight, the job title column requires data cleansing. For the purpose of our analysis, we were able to standardized job titles and reduce the number of unique jobs to 5,097.  Further cleansing would be needed to have an accurate picture of the top roles on the sunshine list.  Focusing on 2020 our cleansed data shows that it is educators, managers, nurses and police topping off the list.
+This leads us to ask who is on the list? We now look to the job titles.  What jobs are making the list grow.  A count on job titles reveals that there are 179,380 unique job titles in the dataset. In order to drive any quantifiable insight, the job title column requires data cleansing. For the purpose of our analysis, we were able to standardized job titles and reduce the number of unique jobs to 5,097.  Further cleansing would be needed to have an accurate picture of the top roles. Despite the dirtiness of the data, when we focus on just the year 2020, the data shows that it is educators, managers, nurses and police topping off the list.
 
 ![JobTitle](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/Job_Titles.PNG)
  
@@ -219,11 +219,17 @@ As opposed to the highest earners in the same year, being CEO/CFO, Physicians an
 
 ![JobTitleBig](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/JobsGreaterThan500K.png)
  
-As the job title data is still very dirty, we will use the sector data which has been cleansed to only 8 categories. Reviewing the data for highest earners, we can see that the Hydro/OPG sector leads in terms of highest salary paid.  This is $846,430 more than that of the highest earner in the school’s sector.   It is also interesting to note that Hydro/OPG has the lowest employee count, with the lowest percentage of women. Women represent 22% of the Hydro/OPG employees on sunshine list.  
+A cleaner field to review is the sector data. We managed to cleanse this field to only 8 categories. Reviewing the data for highest earners, we can now see that the Hydro/OPG sector leads in terms of highest salary paid.  It is actually $846,430 more than that of the highest earner in the school’s sector.   What is also interesting to note is that Hydro/OPG has not only the lowest employee count, but also the lowest percentage of women represented on the list. Women represent 22% of the Hydro/OPG employees on sunshine list.  
 
 ![MaxSalaryTreeMap](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/MaxSalarySector.png)
  
-Who are the top earners on the sunshine list?  How many of these top roles belong to women?  Are certain sectors more generous than others?  To answer these questions, we look to the top 5 individuals of each sector.
+This leads into our original questions of: 
+
+-Who are the top earners on the sunshine list?  
+-How many of these top roles belong to women?  
+-Are certain sectors more generous than others? 
+
+To answer these questions, we look to the top 5 individuals of each sector.
 
 ![Top5](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/Top5PerSector2020.PNG)
  
@@ -235,24 +241,30 @@ Who are the top earners on the sunshine list?  How many of these top roles belon
 
 [Link to Machine Learning Model Process](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/ML_Process.md)
 
-From the top earning position, it would appear we do have a gender wage gap in Ontario’s public sector.  When we look at our salary bins by gender, we can see a pyramid with the highest paid at the top and the $110K to $129K bin at the base.  Men dominate the higher paying salary bins, whereas the count of women in the lower salary bins is growing.
+From the top earning position, it would appear we do have a **gender wage gap** in Ontario’s public sector.  When we look at our salary bins by gender, we can see a pyramid with the highest paid at the top and the $110K to $129K bin at the base.  Men dominate the higher paying salary bins, whereas the count of women in the lower salary bins is growing.
  
 ![GenderSalaryBins](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/SalaryBin_Gender.PNG)
 
-While a wage gap is evident, it does appear that there is now after 24 years an equal number of women represented on the sunshine list as there are men.  
+While a wage gap is evident, it does appear that there is now after 24 years an overall **equal number of women represented** on the sunshine list as there are men.  
 
 ![Donuts](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/DonutCharts.PNG)
 ![AvgSalaryOverTime](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/Summary%20Analysis/AvgSalary_OverTime.PNG)
 
-What is difficult to tease out of the sunshine list is the ability to track top-earning positions.  Have generous raises been enjoyed while potentially lower seniority roles endured wages freezes and/or cutbacks.  The reason for this is the lack of unique employee identifier provided, as well as the magnitude of the dirty data. 
+What is difficult to tease out of the sunshine list is the ability to track top-earning positions.  Without further extensive data cleansing, we were not able to answer if generous raises been enjoyed by some, while potentially less seniority roles endured wages freezes and/or cutbacks.  The reason for this is the lack of unique employee identifier provided, which is only ampliphed by the shear magnitude of the dirty data. 
 
 The Sunshine list is an amalgamation of various agencies public salary reporting.  There does not appear to be a standard for such reporting criteria.  No standardization for data in columns such as job titles/roles, names, employers or datatypes.  List column headers name tend to change from year to year.  In addition, there does not appear to be any validation of the data being published as seen in 2006 with 2 employees having salaries noted as exceeding $12 million.  Additional effort would still be required to cleanse the job title, employer and last name columns.  This would allow for traceability of these individuals over the 24 years of data.  More details can be found in our data cleansing procedure.  
 
 [Link to Data Cleansing Procedure](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Data_Cleanings_Procedure.md)
 
-In conclusion, our analysis does demonstrate that the Ontario taxpayers can use the sunshine list in a meaningful way to seek insights in terms of the gender gap.  The data shows that the average salary of those on the list has remained constant and the bulk of these individuals reside in the lower salary bins.  Given the excessive growth of the list, the threshold metric is clearly out of date.  We see nurses, police officers, bus drivers all on the list. This is not due to generous bonus, but likely significant hours of overtime.  The underlying purpose of the published list is to provide transparency to public spend.   The employee growth to the list acts to mask high earners, as these datapoints tend to hide amongst weeds so to say.  
+In conclusion, our analysis does demonstrate that the Ontario taxpayers can use the sunshine list in a meaningful way to seek insights in terms of the gender gap.  The data shows that the average salary of those on the list has remained constant and the bulk of these individuals reside in the lower salary bins.  Given the excessive growth of the list, the threshold metric is clearly out of date.  We see nurses, police officers, bus drivers all on the list. This is not due to generous bonus, but likely significant hours of overtime or tenture in roles.  The underlying purpose of the published list is to provide transparency to public spend. It is our opinion that it is not the masses of front line workers or educators that should be monitored,but rather the upper percentile of higher earners and/or sectors that can provide the greatest insight into spending accountability.   The employee growth to the list acts to mask high earners, as these datapoints tend to hide amongst weeds so to say.  
 
-It would be our recommendation that the threshold metric be re-examined. At min it should reflect today’s cost of living.  $100,000 in 1996 does not have the same value in 2020.  In addition, a unique employee identified should be included in the publication.
+It would be our recommendation that the threshold metric be re-examined. At minimum it should reflect today’s cost of living. $100,000 in 1996 does not have the same value in 2020.  
+
+We would also propose that the Ontario Government review the following:
+- threshold metric
+- incorporate a unique employee identifier
+- mandate minimum standards of disclosure submissions (consistent data entry standards)
+- a quality check of the data being submitted
 
 ## **Recommendations for Future Analysis/ Parking Lot items due to time and resource constraints:**
 - Predict age for everyone on the sunshine list using machine learning techniques.
@@ -285,6 +297,9 @@ Towards Data Science [Naive-bayes-explained](https://towardsdatascience.com/naiv
  Christophm Github [Github](https://christophm.github.io/interpretable-ml-book/interaction.html)
  
  StackOverflow [StackOverflow](https://stackoverflow.com/questions/43288550/iopub-data-rate-exceeded-in-jupyter-notebook-when-viewing-image)
+ 
+ US Social Security Website [US_SS](http://www.ssa.gov/oact/babynames/limits.html)
+ 
 
 ### Consolidated SunShine List (raw data)
 
