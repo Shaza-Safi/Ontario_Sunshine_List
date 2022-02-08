@@ -80,7 +80,7 @@ Given the data available, can we use 25 years of data to determine whether the O
 
 ### Tools:
 * pgAdmin 4 used to house the Sunshine list and Statistics Canada data
-* Tableau Public used to display Dashboard
+* Tableau Desktop and TableauPublic used to display Dashboard
 * Jupyter Notebook used for data extraction/transformation, data analysis and machine learning model
 * GitHub.io
 * Visual Studio Code Version: 1.60.0
@@ -94,20 +94,21 @@ Given the data available, can we use 25 years of data to determine whether the O
 
 ### Libraries:
 * pandas
-* *Regular Expression RegEx*
 * Matplotlib 
-* random 
-* nltk
+* Random 
+* NLTK
 * sklearn
 * Style.css 
 * Bootstrap
+* SqlAlchemy
+* functools
 
 
 ### Resources:
-* see ETL process
+[Link to Resource Files](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/tree/main/Resources)
 
-### Algorithms:
-* to be updated in next segment
+[Link to Raw Data CSV Files](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/tree/main/Raw%20Data%20CSV%20files)
+
 
 ## **Data Exploration Phase:**
 ### ETL Process 
@@ -179,7 +180,7 @@ We will use Tableau Public to create our Dashboard. We will have our Dashboard d
 
 Below is a prilimanary blueprint of our dashboard will look like.
 
-[The link to our Preliminary tableau dashboard](https://public.tableau.com/views/Sunshine_Dashboard_Workbook/Gender_Dashboard?:language=en-US&:display_count=n&:origin=viz_share_link)
+[The link to Tableau Dashboard](https://public.tableau.com/views/Sunshine_Dashboard_Workbook/Gender_Dashboard?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 Interactive elements which will be incorporated into the Dashboard are:
 - interactive filters
