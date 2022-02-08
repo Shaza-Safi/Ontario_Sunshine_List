@@ -271,6 +271,9 @@ We would also propose that the Ontario Government review the following:
 - Conduct a sentimental analysis on twitter feeds using machine learning to identify relavence of the sunshine list and having a positive or negative impact.
 - Webscrapping the sunshine list website in order to have the updated list every year.
 - Consolidate the First Names, Gender tables into 1 and have the Machine Learning Model update the table, rather than reading one Names Table to create a secondary Names Table with gender, that is then used to update the Sunshine Table records.
+- Host via AWS.  We have made inital attempts to integrate into our pipeline;however, simply did not have enough time to complete for submission deadline. Provided link show cases our progress to date.  [Link to AWS folder]( https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/tree/main/AWS) 
+- Adding additional features to our Machine Learning Model for gender prediction such as job title, sector and employer
+
 
 ## **Issues Encountered:**
 - GitHub large files size constrainsts.
