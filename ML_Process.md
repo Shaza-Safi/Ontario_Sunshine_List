@@ -18,7 +18,9 @@ Step 1: Preprocessing U.S. Social Security Name-Gender-Frequency Data
   * The U.S. Social Security website has made a list of file free for public access
   * There is one file per year dating back to 1880
   * Each one is a txt file that contains a list of names, that name's respective gender, and that name-gender's frequency for that given year, as seen below:
-![](Images/ML images/names.png)
+  
+![Names](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Images/ML%20images/names.png)
+
   * Every name-gender combination is unique, meaning the same name can be listed twice but only if each instance possesses a different gender (one male, one female)
   * The frequency data represents the number of people in the US that possessed this respective name-gender combination in a given year
   * Every year a new file is released in the same format however, the data is updated based on births/deaths of people with that specific name-gender combination
