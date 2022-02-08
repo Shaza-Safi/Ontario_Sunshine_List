@@ -43,6 +43,8 @@ The files are:
 
   NOTE: the "SunshineList_UpdateCleanseShortCut.sql" can be used as a macro(s) in the SunshineList.sql file, which is the analysis file used to update and discover the     addtional cleansing required.
   
+  [Link to SQL shortcut for updates and cleansing](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/SunshineList_UpdateCleanseShortCut.sql)
+  
 # Step 5 - Export Database tables for Tableau Desktop
 
 1) Create a folder called "Resources" 
