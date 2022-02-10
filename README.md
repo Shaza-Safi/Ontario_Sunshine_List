@@ -60,6 +60,7 @@ Given the data available, can we use 25 years of data to determine whether the O
 | Objective|Location |
 |----|----|
 | Presentation | [Link to Google Slides](https://docs.google.com/presentation/d/1YnezG2o4Sw96HEiBtiFBQW5cmL6X4uf0_NrUNO7HAF0/edit?usp=sharing) |
+| Presentation Script | [Link to script google doc](https://docs.google.com/document/d/1Z5RuBL-9s_-bPlnp2IepbVt2FUjhK4Qm/edit?usp=sharing&ouid=104333799721409125308&rtpof=true&sd=true) |
 | Database Integration-step 1 | [Link to Sunshine SQL file](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/SunshineList.sql)|
 | Database Integration-step 2  | [Link to Stats Canada ipynb file](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/StatsCan_Ontario_cleansing.ipynb)|
 | Database Integration-step 3  | [Link to Sunshine ipynb file](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/SunshineList_DataCleansing.ipynb) |
@@ -67,15 +68,7 @@ Given the data available, can we use 25 years of data to determine whether the O
 | Machine Learning code and output | [Link to ML model](https://github.com/Shaza-Safi/Final-Project-Sunshine-Segment3/blob/main/Machine_Learning_Model_Gender_Prediction.ipynb) |
 | Dashboard | [Link to dashboard](https://public.tableau.com/views/Sunshine_Dashboard_Workbook/TheThreshold?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link) |
 
-### Changes from Seg2 submission to Seg3 submission
-- Modified Machine Learning Model
-- Added a Machine Learning Model process document
-- Added a Data Cleansing Procedure document
-- Tweaked Readme to remove all add references 
-- Added Pipeline Instructions document
-- Added Project Website files
-- Removing AWS hosting from projects scope
-      
+     
 ## **Technologies & Tools Used:**
 
 ### Tools:
